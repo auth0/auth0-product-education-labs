@@ -1,4 +1,4 @@
-# auth0-product-education-labs
+# Auth0 Product Education Labs
 
 ## Tools
 
