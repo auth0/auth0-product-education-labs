@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="preload"
-      href="https://cdn2.auth0.com/styleguide/core/2.0.1/fonts/fakt/FaktPro-Normal.woff2"
+      href="https://cdn.auth0.com/styleguide/core/2.0.1/fonts/fakt/FaktPro-Normal.woff2"
       as="font"
       type="font/woff2"
-      crossorigin="true"
+      crossorigin
     />
     <title>Vercel + GitHub + Auth0 = ❤️</title>
     <style>
+      @font-face {
+        font-family: fakt-web;
+        src: url(https://cdn.auth0.com/styleguide/core/2.0.1/fonts/fakt/FaktPro-Normal.woff2);
+      }
+
       body {
         font-family: fakt-web, Helvetica Neue, Hevetica, sans-serif;
         color: #333c4d;
@@ -24,46 +29,63 @@
       }
 
       h1 {
-        font-size: 36px;
-        margin-bottom: 10px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
       }
 
       p {
-        font-size: 20px;
-        margin: 0;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0.2px;
       }
 
       i {
         color: #ffffff;
-        font-size: 100px;
-        line-height: 200px;
+        line-height: 85px;
         margin-left: -15px;
       }
 
       .card {
         background: white;
         padding: 60px;
-        border-radius: 4px;
-        box-shadow: 0 2px 3px #c8d0d8;
+        border-radius: 3px;
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.12),
+          0px 3px 8px rgba(0, 0, 0, 0.0379303);
+        border-radius: 3px;
         margin: auto;
       }
 
       .icon {
-        border-radius: 200px;
-        height: 200px;
-        width: 200px;
+        border-radius: 85px;
+        height: 85px;
+        width: 85px;
         background: #1bc99f;
         margin: 0 auto;
       }
 
-      svg {
+      i > svg {
+        height: 38px;
+        width: 38px;
+        position: relative;
+        top: 15px;
+        left: 10px;
+      }
+
+      a > svg {
         position: absolute;
         bottom: 5px;
         right: 5px;
-        opacity: 60%;
+        opacity: 55%;
+        transition: opacity 0.25s ease-in-out;
       }
 
-      svg:hover {
+      a > svg:hover {
         opacity: 100%;
       }
     </style>
@@ -71,7 +93,22 @@
   <body>
     <div class="card">
       <div class="icon">
-        <i class="checkmark">✓</i>
+        <i class="checkmark">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-check"
+          >
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </i>
       </div>
       <h1>Success</h1>
       <p>You are now all set up to work through the labs.</p>
