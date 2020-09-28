@@ -1,15 +1,15 @@
 const express = require("express");
-const csp = require("express-csp-header");
+const { expressCspHeader, NONE, SELF } = require("express-csp-header");
 const http = require("http");
 const { auth, requiredScopes } = require("express-oauth2-bearer");
 
 const app = express();
 
 app.use(
-  csp({
-    policies: {
-      "default-src": [csp.NONE],
-      "img-src": [csp.SELF],
+  expressCspHeader({
+    directives: {
+      "default-src": [NONE],
+      "img-src": [SELF],
     },
   })
 );
