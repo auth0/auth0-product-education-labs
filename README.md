@@ -18,4 +18,4 @@ The Expenses API is a simple api that is secured using the express-oauth2-bearer
 
 **Example Deploy:**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL&project-name=expenses-api&repository-name=expenses-api)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,VERCEL_URL&project-name=expenses-api&repository-name=expenses-api)
