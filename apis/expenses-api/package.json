@@ -15,7 +15,6 @@
   "keywords": [],
   "dependencies": {
     "express": "^4.17.1",
-    "express-csp-header": "^4.0.0",
     "express-oauth2-bearer": "^0.4.0"
   }
 }
