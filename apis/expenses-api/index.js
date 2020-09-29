@@ -4,9 +4,21 @@ const { auth, requiredScopes } = require("express-oauth2-bearer");
 
 const app = express();
 
+/*
+ * This method is here to allow a
+ * successful response on root requests.
+ * This stops content security policy
+ * from preventing the user to make
+ * requests via the browsers console.
+ */
+app.get("/", (req, res) => {
+  res.status(200).end();
+});
+// **************************
+
 app.use(auth());
 
-app.get("/", requiredScopes("read:reports"), (req, res) => {
+app.get("/reports", requiredScopes("read:reports"), (req, res) => {
   res.send([
     {
       date: new Date(),
