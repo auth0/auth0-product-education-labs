@@ -12,7 +12,7 @@ const app = express();
  * requests via the browsers console.
  ****************************/
 app.get("/", (req, res) => {
-  res.status(200).end();
+  res.status(200).end("OK");
 });
 /****************************/
 
