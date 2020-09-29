@@ -7,7 +7,6 @@ const app = express();
 app.use(auth());
 
 app.get("/", requiredScopes("read:reports"), (req, res) => {
-  console.log(new Date(req.auth.claims.iat * 1000));
   res.send([
     {
       date: new Date(),
