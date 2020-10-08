@@ -11,6 +11,12 @@ The tools and examples in this repository can be run in a number of ways. Each a
 - [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) - using [Docker Desktop](https://www.docker.com/products/docker-desktop) to isolate development in a local container. This avoids needing to install developer runtimes on your local machine while allowing to you continue working locally.
 - Local - using your local development environment
 
+### Running in Vercel
+
+Vercel is a cloud based hosting service. Each individual tool and sample application can be deployed to Vercel by clicking the blue Deploy button.
+
+A wizard dialog will guide you through the deployment process.
+
 ### Running in Codespaces
 
 The overall repository and each individual tool or sample includes a devcontainer definition. GitHub Codespaces can utilize it to create a completely web based IDE and execution environment. No installs are needed.
