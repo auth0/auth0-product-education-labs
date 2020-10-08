@@ -11,19 +11,19 @@ The tools and examples in this repository can be run in a number of ways. Each a
 - [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) - using [Docker Desktop](https://www.docker.com/products/docker-desktop) to isolate development in a local container. This avoids needing to install developer runtimes on your local machine while allowing to you continue working locally.
 - Local - using your local development environment
 
-### Running Locally
+### Running in Codespaces
 
-All of the tools and sample applications can be run locally assuming dependecies are installed on the local machine. To prepare for local execution run `npm install` and then `npm run init` from the root of the repository.
+The overall repository and each individual tool or sample includes a devcontainer definition. GitHub Codespaces can utilize it to create a completely web based IDE and execution environment. No installs are needed.
 
-##### Dependencies
+To use, from the GitHub project page:
 
-Project assumes a working nodejs environment and has been tested using the following versions.
+1. Click the green **Code** button.
+1. Click the **Open with Codespaces** menu option.
+1. Click the **New codespace** button.
 
-| Tool                      | Version  | Install                                            |
-| ------------------------- | -------- | -------------------------------------------------- |
-| Node.js                   | v12.15.0 | https://nodejs.org/dist/v12.19.0/node-v12.19.0.pkg |
-| NPM                       | v6.14.8  | npm install npm@latest -g                          |
-| NVM <sup>(optional)</sup> | v0.36.0  | https://github.com/nvm-sh/nvm                      |
+The Codespace will be created and the project will load into the web based VS Code IDE.
+
+**Note:** Once the Codespace is created, you do not need to create it again. Simply select it from the Codespace menu.
 
 ### Running Locally in Docker
 
@@ -41,6 +41,20 @@ The overall repository and each individual tool or sample includes a devcontaine
 <p align="center">
     <img src="docs/images/remote-dev-dialog.png?raw=true"/>
 </p>
+
+### Running Locally
+
+All of the tools and sample applications can be run locally assuming dependecies are installed on the local machine. To prepare for local execution run `npm install` and then `npm run init` from the root of the repository.
+
+##### Dependencies
+
+Project assumes a working nodejs environment and has been tested using the following versions.
+
+| Tool                      | Version  | Install                                            |
+| ------------------------- | -------- | -------------------------------------------------- |
+| Node.js                   | v12.15.0 | https://nodejs.org/dist/v12.19.0/node-v12.19.0.pkg |
+| NPM                       | v6.14.8  | npm install npm@latest -g                          |
+| NVM <sup>(optional)</sup> | v0.36.0  | https://github.com/nvm-sh/nvm                      |
 
 ## Tools
 
