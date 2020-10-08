@@ -1,8 +1,24 @@
 const express = require("express");
-const http = require("http");
+const cors = require("cors");
+const { createServer } = require("http");
 const { auth, requiredScopes } = require("express-oauth2-bearer");
 
 const app = express();
+
+app.use(cors());
+
+const expenses = [
+  {
+    date: new Date(),
+    description: "Pizza for a Coding Dojo session.",
+    value: 102,
+  },
+  {
+    date: new Date(),
+    description: "Coffee for a Coding Dojo session.",
+    value: 42,
+  },
+];
 
 /****************************
  * This method is here to allow a
@@ -16,23 +32,21 @@ app.get("/", (req, res) => {
 });
 /****************************/
 
-app.use(auth());
-
-app.get("/reports", requiredScopes("read:reports"), (req, res) => {
-  res.send([
-    {
-      date: new Date(),
-      description: "Pizza for a Coding Dojo session.",
-      value: 102,
-    },
-    {
-      date: new Date(),
-      description: "Coffee for a Coding Dojo session.",
-      value: 42,
-    },
-  ]);
+app.get("/total", (req, res) => {
+  const total = expenses.reduce((accum, expense) => accum + expense.value, 0);
+  res.send({ total, count: expenses.length });
 });
 
-http.createServer(app).listen(5000, () => {
-  console.log(`listening on 5000`);
+// 👆 public routes above 👆
+app.use(auth());
+// 👇 private routes below 👇
+
+app.get("/reports", requiredScopes("read:reports"), (req, res) => {
+  res.send(expesnes);
+});
+
+const port = process.env.PORT || 5000;
+
+createServer(app).listen(port, () => {
+  console.log(`listening on ${port}`);
 });
