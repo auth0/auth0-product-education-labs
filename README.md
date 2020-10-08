@@ -4,12 +4,12 @@ A set of tools and example applications for Product Education courses.
 
 ## Execution Environment
 
-The tools and examples in this repository can be run in a number of ways including:
+The tools and examples in this repository can be run in a number of ways. Each are specific to the task you are trying to accomplish. For learners, the intention is to use Vercel.
 
 - Local - using your local development environment
-- [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) - using [Docker Desktop](https://www.docker.com/products/docker-desktop) to isolate development in a local container
+- [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) - using [Docker Desktop](https://www.docker.com/products/docker-desktop) to isolate development in a local container. This avoids needing to install developer runtimes on your local machine while allowing to you continue working locally.
 - GitHub [Codespaces](https://github.com/features/codespaces) - using a cloud based IDE and runtime
-- Deployed to [Vercel](https://vercel.com) - using a cloud based hosting environment
+- [Vercel](https://vercel.com) - using a cloud based hosting environment
 
 ### Running Locally
 

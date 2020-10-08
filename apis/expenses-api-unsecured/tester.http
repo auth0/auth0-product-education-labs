@@ -27,6 +27,6 @@ GET {{api_url}}/total HTTP/1.1
 ### @name get_report_route_unsecured
 GET {{api_url}}/reports HTTP/1.1
 
-### @ name get_report_route_secured
+### @name get_report_route_secured
 GET {{api_url}}/reports HTTP/1.1
 Authorization: Bearer {{access_token}}
