@@ -25,6 +25,23 @@ Project assumes a working nodejs environment and has been tested using the follo
 | NPM                       | v6.14.8  | npm install npm@latest -g                          |
 | NVM <sup>(optional)</sup> | v0.36.0  | https://github.com/nvm-sh/nvm                      |
 
+### Running Locally in Docker
+
+The overall repository and each individual tool or sample includes a devcontainer definition. This is to facilitate the use of a self contained docker image containing all the development dependencies.
+
+1. Install [Docker Desktop](https://www.docker.com/products/docker-desktop).
+
+- Right-click on the Docker task bar item and update **Settings / Preferences > Shared Drives / File Sharing** with any source code locations you want to open in a container.
+
+1. Install [VS Code](https://code.visualstudio.com/).
+1. Install the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
+1. Open the root directory of the repository in VS Code.
+1. Click **Reopen In Container** on the remote development notification dialog.
+
+<p align="center">
+    <img src="docs/images/remote-dev-dialog.png?raw=true"/>
+</p>
+
 ## Tools
 
 ### Initial Deploy
