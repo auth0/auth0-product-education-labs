@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Auth0 Labs Sample API",
+  "author": "Bobby Johnson <bobby@auth0.com> (https://iamnotmyself.com/)",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NotMyself/lab-samples"
+  },
+  "scripts": {
+    "start": "node index"
+  },
+  "keywords": [],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

@@ -78,3 +78,37 @@ https://vercel.com/new/git/external
 ```
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES=https://expenses-api,VERCEL_URL&project-name=expenses-api&repository-name=expenses-api)
+
+## Expenses API - Unsecured
+
+The Unsecured Expenses API is a simple api that is intended to be used as a starting point for hands on labs.
+
+### Environment Variables
+
+| Variable          | Value                                | Default |
+| ----------------- | ------------------------------------ | ------- |
+| ISSUER_BASE_URL   | https://your-tenant.region.auth0.com | ❌      |
+| ALLOWED_AUDIENCES | **https://expenses-api**             | ✅      |
+| PORT              | **5000**                             | ✅      |
+
+#### Run Local:
+
+```bash
+ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
+npm run expenses-api:start
+```
+
+#### Vercel Deploy:
+
+```
+https://vercel.com/new/git/external
+  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured
+  &env=
+    ISSUER_BASE_URL,
+    VERCEL_URL,
+    ALLOWED_AUDIENCES=https://expenses-api
+  &project-name=expenses-api-unsecured
+  &repository-name=expenses-api-unsecured
+```
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES=https://expenses-api,VERCEL_URL&project-name=expenses-api-unsecured&repository-name=expenses-api-unsecured)
