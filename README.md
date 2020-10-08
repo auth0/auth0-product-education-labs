@@ -2,6 +2,16 @@
 
 A set of tools and example applications for Product Education courses.
 
+## Index
+
+1. [APIs](#apis)
+1. [Tools](#tools)
+1. [Execution Environment](#execution-environment)
+1. [Issue Reporting](#issue-reporting)
+1. [Contributing](#contributing)
+1. [Author](#author)
+1. [License](#license)
+
 ## APIs
 
 ## Expenses API - Secured
@@ -78,7 +88,7 @@ https://vercel.com/new/git/external
 
 The initial deploy tool is intended to be used as a test deployment between GitHub and Vercel.
 
-### Environment Variables
+#### Environment Variables
 
 No environment variables are needed for initial deploy.
 
