@@ -47,7 +47,7 @@ https://vercel.com/new/git/external
 
 ## Expenses API - Secured
 
-The Expenses API is a simple api that is secured using the express-oauth2-bearer module.
+The Expenses API is a simple api that is secured using the [express-oauth2-bearer](https://github.com/auth0/express-oauth2-bearer) module.
 
 ### Required Environment Variables
 
