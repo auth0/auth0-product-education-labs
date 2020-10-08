@@ -1,5 +1,21 @@
 # Auth0 Product Education Labs
 
+A set of tools and example applications for Product Education courses.
+
+#### Running Locally
+
+All of the tools and sample applications can be run locally assuming dependecies are installed on the local machine. To prepare for local execution run `npm run init` from the root of the repository.
+
+##### Dependencies
+
+Project assumes a working nodejs environment and has been tested using the following versions.
+
+| Tool                      | Version  | Install                                            |
+| ------------------------- | -------- | -------------------------------------------------- |
+| Node.js                   | v12.15.0 | https://nodejs.org/dist/v12.19.0/node-v12.19.0.pkg |
+| NPM                       | v6.14.8  | npm install npm@latest -g                          |
+| NVM <sup>(optional)</sup> | v0.36.0  | https://github.com/nvm-sh/nvm                      |
+
 ## Tools
 
 ### Initial Deploy
