@@ -22,7 +22,7 @@ Project assumes a working nodejs environment and has been tested using the follo
 
 The initial deploy tool is intended to be used as a test deployment between GitHub and Vercel.
 
-### Required Environment Variables
+### Environment Variables
 
 No environment variables are needed for initial deploy.
 
@@ -49,7 +49,7 @@ https://vercel.com/new/git/external
 
 The Expenses API is a simple api that is secured using the [express-oauth2-bearer](https://github.com/auth0/express-oauth2-bearer) module.
 
-### Required Environment Variables
+### Environment Variables
 
 | Variable          | Value                                | Default |
 | ----------------- | ------------------------------------ | ------- |
