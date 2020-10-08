@@ -13,7 +13,7 @@ The tools and examples in this repository can be run in a number of ways includi
 
 ### Running Locally
 
-All of the tools and sample applications can be run locally assuming dependecies are installed on the local machine. To prepare for local execution run `npm run init` from the root of the repository.
+All of the tools and sample applications can be run locally assuming dependecies are installed on the local machine. To prepare for local execution run `npm install` and then `npm run init` from the root of the repository.
 
 ##### Dependencies
 
