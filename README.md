@@ -2,7 +2,16 @@
 
 A set of tools and example applications for Product Education courses.
 
-#### Running Locally
+## Execution Environment
+
+The tools and examples in this repository can be run in a number of ways including:
+
+- Local - using your local development environment
+- [VS Code Remote Development](https://code.visualstudio.com/docs/remote/remote-overview) - using [Docker Desktop](https://www.docker.com/products/docker-desktop) to isolate development in a local container
+- GitHub [Codespaces](https://github.com/features/codespaces) - using a cloud based IDE and runtime
+- Deployed to [Vercel](https://vercel.com) - using a cloud based hosting environment
+
+### Running Locally
 
 All of the tools and sample applications can be run locally assuming dependecies are installed on the local machine. To prepare for local execution run `npm run init` from the root of the repository.
 
