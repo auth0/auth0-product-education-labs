@@ -1,3 +1,5 @@
+![Auth0 Open Source Software](https://cdn.auth0.com/resources/oss-source-large-2x.png)
+
 # Auth0 Product Education Labs
 
 A set of tools and example applications for Product Education courses.
