@@ -1,0 +1,31 @@
+{
+  "name": "auth0-product-education-labs",
+  "version": "1.0.0",
+  "description": "A set of tools and example applications for Product Education courses",
+  "license": "MIT",
+  "author": "Auth0",
+  "bugs": {
+    "url": "https://github.com/auth0/auth0-product-education-labs/issues"
+  },
+  "homepage": "https://github.com/auth0/auth0-product-education-labs#readme",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0/auth0-product-education-labs.git"
+  },
+  "keywords": [
+    "auth0",
+    "vercel",
+    "oauth2",
+    "openid",
+    "oidc",
+    "auth",
+    "authentication",
+    "samples",
+    "tools",
+    "labs"
+  ],
+  "dependencies": {
+    "eslint": "^7.10.0"
+  }
+}
