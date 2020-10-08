@@ -158,3 +158,15 @@ Project assumes a working nodejs environment and has been tested using the follo
 | Node.js                   | v12.15.0 | https://nodejs.org/dist/v12.19.0/node-v12.19.0.pkg |
 | NPM                       | v6.14.8  | npm install npm@latest -g                          |
 | NVM <sup>(optional)</sup> | v0.36.0  | https://github.com/nvm-sh/nvm                      |
+
+## Issue Reporting
+
+If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+
+For auth0 related questions/support please use the [Support Center](https://support.auth0.com/).
+
+## Contributing
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+Please review our [Code of Conduct](docs/CODE_OF_CONDUCT.md) and [Contributing](docs/CONTRIBUTING.md) guidelines.
