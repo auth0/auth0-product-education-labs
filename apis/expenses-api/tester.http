@@ -1,4 +1,0 @@
-@api_host = FILL_ME_IN
-@access_token = FILL_ME_IN
-GET https://{{api_host}}/ HTTP/1.1
-Authorization: Bearer {{access_token}}

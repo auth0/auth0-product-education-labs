@@ -2,8 +2,8 @@
   "name": "api",
   "version": "1.0.0",
   "description": "Auth0 Labs Sample API",
-  "author": "Bobby Johnson <bobby@auth0.com> (https://iamnotmyself.com/)",
   "license": "MIT",
+  "author": "Auth0",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   },
   "keywords": [],
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-oauth2-bearer": "^0.4.0"
   }
