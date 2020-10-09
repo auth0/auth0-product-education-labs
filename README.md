@@ -28,6 +28,14 @@ The Expenses API is a simple api that is secured using the [express-oauth2-beare
 | ALLOWED_AUDIENCES | **https://expenses-api**             | ✅      |
 | PORT              | **5000**                             | ✅      |
 
+### Required Scopes
+
+| Endpoint   | Secure | Scopes         |
+| ---------- | ------ | -------------- |
+| `/`        | ❌     |                |
+| `/total`   | ✅     |                |
+| `/reports` | ✅     | `read:reports` |
+
 #### Run Local:
 
 ```bash
@@ -61,6 +69,14 @@ The Unsecured Expenses API is a simple api that is intended to be used as a star
 | ISSUER_BASE_URL   | https://your-tenant.region.auth0.com | ❌      |
 | ALLOWED_AUDIENCES | **https://expenses-api**             | ✅      |
 | PORT              | **5000**                             | ✅      |
+
+### Required Scopes
+
+| Endpoint   | Secure | Scopes |
+| ---------- | ------ | ------ |
+| `/`        | ❌     |        |
+| `/total`   | ❌     |        |
+| `/reports` | ❌     |        |
 
 #### Run Local:
 
