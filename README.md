@@ -33,7 +33,7 @@ The Expenses API is a simple api that is secured using the [express-oauth2-beare
 | Endpoint   | Secure | Scopes         |
 | ---------- | ------ | -------------- |
 | `/`        | ❌     |                |
-| `/total`   | ✅     |                |
+| `/total`   | ❌     |                |
 | `/reports` | ✅     | `read:reports` |
 
 #### Run Local:
