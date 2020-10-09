@@ -13,9 +13,9 @@
     "init:dependencies": "concurrently \"npm:expenses-api:secure:init:dependencies\" \"npm:expenses-api:init:dependencies\"",
     "init:environment": "",
     "initial-deploy:start": "http-server ./tools/initial-deploy -p $npm_package_config_initial_deploy_port -c-1",
-    "expenses-api:start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=npm_package_config_expense_api_audience npm start --prefix ./apis/expenses-api-unsecured",
+    "expenses-api:start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audience npm start --prefix ./apis/expenses-api-unsecured",
     "expenses-api:init:dependencies": "npm install --prefix ./apis/expenses-api-unsecured",
-    "expenses-api:secure:start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=npm_package_config_expense_api_audience npm start --prefix ./apis/expenses-api-secured",
+    "expenses-api:secure:start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audience npm start --prefix ./apis/expenses-api-secured",
     "expenses-api:secure:init:dependencies": "npm install --prefix ./apis/expenses-api-secured"
   },
   "config": {
