@@ -37,7 +37,7 @@ app.get("/total", (req, res) => {
 });
 
 app.get("/reports", (req, res) => {
-  res.send(expesnes);
+  res.send(expenses);
 });
 
 const port = process.env.PORT || 5000;

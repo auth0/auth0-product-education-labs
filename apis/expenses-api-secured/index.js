@@ -42,7 +42,7 @@ app.use(auth());
 // 👇 private routes below 👇
 
 app.get("/reports", requiredScopes("read:reports"), (req, res) => {
-  res.send(expesnes);
+  res.send(expenses);
 });
 
 const port = process.env.PORT || 5000;
