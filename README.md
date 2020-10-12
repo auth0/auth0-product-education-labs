@@ -52,7 +52,7 @@ https://vercel.com/new/git/external
   &repository-name=web-app-unsecured
 ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,VERCEL_URL&project-name=web-app-unsecured&repo-name=web-app-unsecured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,VERCEL_URL&project-name=web-app-unsecured&repository-name=web-app-unsecured)
 
 ## APIs
 
