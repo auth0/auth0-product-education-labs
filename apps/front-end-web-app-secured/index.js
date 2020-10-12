@@ -7,7 +7,7 @@ const { auth, requiresAuth } = require("express-openid-connect");
 
 const port = process.env.PORT || 7000;
 
-const appUrl = process.env.BASE_URL || `http://localhost:${port}`;
+const appUrl = process.env.VERCEL_URL || `http://localhost:${port}`;
 
 const app = express();
 
