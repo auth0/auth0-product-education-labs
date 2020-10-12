@@ -5,7 +5,9 @@ const request = require("request-promise");
 const session = require("express-session");
 const { auth, requiresAuth } = require("express-openid-connect");
 
-const appUrl = process.env.BASE_URL || `http://localhost:${process.env.PORT}`;
+const port = process.env.PORT || 7000;
+
+const appUrl = process.env.BASE_URL || `http://localhost:${port}`;
 
 const app = express();
 
@@ -56,8 +58,6 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send(err);
 });
-
-const port = process.env.PORT || 7000;
 
 createServer(app).listen(port, () => {
   console.log(`listening on ${port}`);
