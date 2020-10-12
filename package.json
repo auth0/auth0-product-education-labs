@@ -21,11 +21,12 @@
     "expenses-api:init:dependencies": "npm install --prefix ./apis/expenses-api-unsecured",
     "expenses-api:secure:start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audience npm start --prefix ./apis/expenses-api-secured",
     "expenses-api:secure:init:dependencies": "npm install --prefix ./apis/expenses-api-secured",
-    "web-app:start": "PORT=$npm_package_config_web_app_port npm start --prefix ./apps/web-app-unsecured",
+    "web-app:start": "PORT=$npm_package_config_web_app_port APP_SESSION_SECRET=$npm_package_config_app_session_secret npm start --prefix ./apps/web-app-unsecured",
     "web-app:init:dependencies": "npm install --prefix ./apps/web-app-unsecured"
   },
   "config": {
     "web_app_port": 7000,
+    "app_session_secret":"e6de1374433dde92a5bae567b56b01de32ad0d4f0115b7675f5b985720210f4c",
     "initial_deploy_port": 6000,
     "expense_api_port": 5000,
     "expense_api_audience": "https://expenses-api"
