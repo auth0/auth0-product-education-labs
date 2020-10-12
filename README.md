@@ -54,6 +54,45 @@ https://vercel.com/new/git/external
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,VERCEL_URL&project-name=web-app-unsecured&repository-name=web-app-unsecured)
 
+### Front End Web App - Secured
+
+The Secured Front End Web App is a simple express application that is intended to be used as a starting point for hands on labs.
+
+#### Environment Variables
+
+| Variable           | Value                                | Default |
+| ------------------ | ------------------------------------ | ------- |
+| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌      |
+| CLIENT_ID          | application client id from Auth0     | ❌      |
+| API_URL            | url for expenses api                 | ❌      |
+| APP_SESSION_SECRET | openssl rand -hex 32                 | ✅      |
+| PORT               | **7000**                             | ✅      |
+
+#### Run Local:
+
+```bash
+ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
+CLIENT_ID=your-app-client-id  \
+API_URL=http://url-to-expenses-api \
+npm run web-app:start
+```
+
+#### Vercel Deploy:
+
+```
+https://vercel.com/new/git/external
+  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured
+  &env=
+    ISSUER_BASE_URL,
+    CLIENT_ID,
+    APP_SESSION_SECRET,
+    VERCEL_URL
+  &project-name=web-app-unsecured
+  &repository-name=web-app-unsecured
+```
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,VERCEL_URL&project-name=web-app-unsecured&repository-name=web-app-unsecured)
+
 ## APIs
 
 ### Expenses API - Secured
