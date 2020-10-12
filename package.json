@@ -8,24 +8,27 @@
     "url": "https://github.com/auth0/auth0-product-education-labs/issues"
   },
   "homepage": "https://github.com/auth0/auth0-product-education-labs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0/auth0-product-education-labs.git"
+  },
   "scripts": {
     "init": "concurrently \"npm:init:dependencies\" \"npm:init:environment\"",
-    "init:dependencies": "concurrently \"npm:expenses-api:secure:init:dependencies\" \"npm:expenses-api:init:dependencies\"",
+    "init:dependencies": "concurrently \"npm:expenses-api:secure:init:dependencies\" \"npm:expenses-api:init:dependencies\" \"npm:web-app:init:dependencies\"",
     "init:environment": "",
     "initial-deploy:start": "http-server ./tools/initial-deploy -p $npm_package_config_initial_deploy_port -c-1",
     "expenses-api:start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audience npm start --prefix ./apis/expenses-api-unsecured",
     "expenses-api:init:dependencies": "npm install --prefix ./apis/expenses-api-unsecured",
     "expenses-api:secure:start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audience npm start --prefix ./apis/expenses-api-secured",
-    "expenses-api:secure:init:dependencies": "npm install --prefix ./apis/expenses-api-secured"
+    "expenses-api:secure:init:dependencies": "npm install --prefix ./apis/expenses-api-secured",
+    "web-app:start": "PORT=$npm_package_config_web_app_port npm start --prefix ./apps/web-app-unsecured",
+    "web-app:init:dependencies": "npm install --prefix ./apps/web-app-unsecured"
   },
   "config": {
+    "web_app_port": 7000,
     "initial_deploy_port": 6000,
     "expense_api_port": 5000,
     "expense_api_audience": "https://expenses-api"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/auth0/auth0-product-education-labs.git"
   },
   "keywords": [
     "auth0",
@@ -41,7 +44,7 @@
   ],
   "dependencies": {
     "concurrently": "^5.3.0",
-    "eslint": "^7.10.0",
+    "eslint": "^7.11.0",
     "http-server": "^0.12.3"
   }
 }
