@@ -23,7 +23,7 @@
     "expenses-api:secure:dependencies": "npm install --prefix ./apis/expenses-api-secured",
     "web-app:start": "PORT=$npm_package_config_web_app_port APP_SESSION_SECRET=$npm_package_config_app_session_secret npm start --prefix ./apps/web-app-unsecured",
     "web-app:dependencies": "npm install --prefix ./apps/web-app-unsecured",
-    "front-end-web-app:secure:start": "PORT=$npm_package_config_web_app_port APP_SESSION_SECRET=$npm_package_config_app_session_secret npm start --prefix ./apps/front-end-web-app-secured",
+    "front-end-web-app:secure:start": "PORT=$npm_package_config_web_app_port SECRET=$npm_package_config_app_session_secret npm start --prefix ./apps/front-end-web-app-secured",
     "front-end-web-app:secure:dependencies": "npm install --prefix ./apps/front-end-web-app-secured"
   },
   "config": {

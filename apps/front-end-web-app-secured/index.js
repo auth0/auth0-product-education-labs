@@ -17,7 +17,7 @@ app.use(morgan("combined"));
 
 app.use(
   session({
-    secret: process.env.APP_SESSION_SECRET,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
   })
@@ -26,7 +26,7 @@ app.use(
 app.use(
   auth({
     baseURL: appUrl,
-    required: false,
+    authRequired: false,
     auth0Logout: true,
   })
 );

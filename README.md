@@ -65,15 +65,16 @@ The Secured Front End Web App is a simple express application that is intended t
 | ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌      |
 | CLIENT_ID          | application client id from Auth0     | ❌      |
 | API_URL            | url for expenses api                 | ❌      |
+| SECRET             | openssl rand -hex 32                 | ✅      |
 | APP_SESSION_SECRET | openssl rand -hex 32                 | ✅      |
 | PORT               | **7000**                             | ✅      |
 
 #### Run Local:
 
 ```bash
-ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
-CLIENT_ID=your-app-client-id  \
-API_URL=http://url-to-expenses-api \
+ISSUER_BASE_URL=https://training-april.auth0.com \
+CLIENT_ID=KXG1iQXTtz9jymXfG4FauF5HRxFwEV9p  \
+API_URL=http://localhost:5000/ \
 npm run front-end-web-app:secure:start
 ```
 
