@@ -6,6 +6,7 @@ A set of tools and example applications for Product Education courses.
 
 ## Index
 
+1. [Apps](#apps)
 1. [APIs](#apis)
 1. [Tools](#tools)
 1. [Execution Environment](#execution-environment)
@@ -14,13 +15,52 @@ A set of tools and example applications for Product Education courses.
 1. [Author](#author)
 1. [License](#license)
 
+## Apps
+
+### Web App - Unsecured
+
+The Unsecured Web App is a simple express application that is intended to be used as a starting point for hands on labs.
+
+#### Environment Variables
+
+| Variable           | Value                                | Default |
+| ------------------ | ------------------------------------ | ------- |
+| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌      |
+| CLIENT_ID          | application client id from Auth0     | ❌      |
+| APP_SESSION_SECRET | openssl rand -hex 32                 | ✅      |
+| PORT               | **7000**                             | ✅      |
+
+#### Run Local:
+
+```bash
+ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
+CLIENT_ID=your-app-client-id  \
+npm run web-app:start
+```
+
+#### Vercel Deploy:
+
+```
+https://vercel.com/new/git/external
+  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured
+  &env=
+    ISSUER_BASE_URL,
+    CLIENT_ID,
+    APP_SESSION_SECRET,
+    VERCEL_URL
+  &project-name=web-app-unsecured
+  &repository-name=web-app-unsecured
+```
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,VERCEL_URL&project-name=web-app-unsecured&repository-name=web-app-unsecured)
+
 ## APIs
 
-## Expenses API - Secured
+### Expenses API - Secured
 
 The Expenses API is a simple api that is secured using the [express-oauth2-bearer](https://github.com/auth0/express-oauth2-bearer) module.
 
-### Environment Variables
+#### Environment Variables
 
 | Variable          | Value                                | Default |
 | ----------------- | ------------------------------------ | ------- |
@@ -28,7 +68,7 @@ The Expenses API is a simple api that is secured using the [express-oauth2-beare
 | ALLOWED_AUDIENCES | **https://expenses-api**             | ✅      |
 | PORT              | **5000**                             | ✅      |
 
-### Required Scopes
+#### Required Scopes
 
 | Endpoint   | Secure | Scopes         |
 | ---------- | ------ | -------------- |
@@ -58,11 +98,11 @@ https://vercel.com/new/git/external
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,VERCEL_URL&project-name=expenses-api&repository-name=expenses-api)
 
-## Expenses API - Unsecured
+### Expenses API - Unsecured
 
 The Unsecured Expenses API is a simple api that is intended to be used as a starting point for hands on labs.
 
-### Environment Variables
+#### Environment Variables
 
 | Variable          | Value                                | Default |
 | ----------------- | ------------------------------------ | ------- |
@@ -70,7 +110,7 @@ The Unsecured Expenses API is a simple api that is intended to be used as a star
 | ALLOWED_AUDIENCES | **https://expenses-api**             | ✅      |
 | PORT              | **5000**                             | ✅      |
 
-### Required Scopes
+#### Required Scopes
 
 | Endpoint   | Secure | Scopes |
 | ---------- | ------ | ------ |

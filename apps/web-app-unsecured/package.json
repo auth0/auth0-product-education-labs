@@ -1,7 +1,7 @@
 {
-  "name": "expenses-api-unsecured",
+  "name": "web-app-unsecured",
   "version": "1.0.0",
-  "description": "Auth0 Labs Sample API",
+  "description": "Auth0 Labs Sample Web Application",
   "license": "MIT",
   "author": "Auth0",
   "main": "index.js",
@@ -19,13 +19,17 @@
   "keywords": [
     "auth0",
     "vercel",
-    "oauth2",
+    "openid",
+    "oidc",
+    "auth",
+    "authentication",
     "samples",
     "tools",
     "labs"
   ],
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
   }
 }
