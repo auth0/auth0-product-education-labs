@@ -47,12 +47,13 @@ https://vercel.com/new/git/external
     ISSUER_BASE_URL,
     CLIENT_ID,
     APP_SESSION_SECRET,
+    NODE_ENV,
     VERCEL_URL
   &project-name=web-app-unsecured
   &repository-name=web-app-unsecured
 ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,VERCEL_URL&project-name=web-app-unsecured&repository-name=web-app-unsecured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-web-application-unsecure%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,NODE_ENV,VERCEL_URL&project-name=web-app-unsecured&repository-name=web-app-unsecured)
 
 ### Front End Web App - Secured
 
@@ -87,12 +88,13 @@ https://vercel.com/new/git/external
     CLIENT_ID,
     SECRET,
     API_URL,
+    NODE_ENV,
     VERCEL_URL
   &project-name=front-end-web-app-secured
   &repository-name=front-end-web-app-secured
 ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-web-application-secure%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,SECRET,API_URL,VERCEL_URL&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-web-application-secure%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,SECRET,API_URL,NODE_ENV,VERCEL_URL&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
 
 ## APIs
 
@@ -131,12 +133,13 @@ https://vercel.com/new/git/external
   &env=
     ISSUER_BASE_URL,
     ALLOWED_AUDIENCES,
+    NODE_ENV,
     VERCEL_URL
   &project-name=expenses-api
   &repository-name=expenses-api
 ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,VERCEL_URL&project-name=expenses-api&repository-name=expenses-api)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL&project-name=expenses-api&repository-name=expenses-api)
 
 ### Expenses API - Unsecured
 
@@ -173,12 +176,13 @@ https://vercel.com/new/git/external
   &env=
     ISSUER_BASE_URL,
     ALLOWED_AUDIENCES,
+    NODE_ENV,
     VERCEL_URL
   &project-name=expenses-api-unsecured
   &repository-name=expenses-api-unsecured
 ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,VERCEL_URL&project-name=expenses-api-unsecured&repository-name=expenses-api-unsecured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL&project-name=expenses-api-unsecured&repository-name=expenses-api-unsecured)
 
 ## Tools
 
