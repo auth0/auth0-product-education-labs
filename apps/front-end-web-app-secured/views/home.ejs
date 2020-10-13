@@ -9,7 +9,7 @@
   <body>
     <h1>Home Page</h1>
     <% if(locals.user) {%>
-    <p>Hello <%= user.name %></p>
+    <p>Hello <a href="/user"><%= user.name %></a></p>
     <a href="/expenses">Expenses</a>
     <a href="/logout">Logout</a>
     <% } else { %>

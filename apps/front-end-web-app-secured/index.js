@@ -6,7 +6,7 @@ const session = require("express-session");
 const { auth, requiresAuth } = require("express-openid-connect");
 
 const port = process.env.PORT || 7000;
-
+const apiUrl = process.env.API_URL;
 const appUrl = process.env.VERCEL_URL || `http://localhost:${port}`;
 
 const app = express();
@@ -32,21 +32,21 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.render("home", { user: req.openid && req.openid.user });
+  res.render("home", { user: req.oidc && req.oidc.user });
 });
 
 app.get("/user", requiresAuth(), (req, res) => {
-  res.render("user", { user: req.openid && req.openid.user });
+  res.render("user", { user: req.oidc && req.oidc.user });
 });
 
 app.get("/expenses", requiresAuth(), async (req, res, next) => {
   try {
-    const expenses = await request(process.env.API_URL, {
+    const expenses = await request(`${apiUrl}/reports`, {
       json: true,
     });
 
     res.render("expenses", {
-      user: req.openid && req.openid.user,
+      user: req.oidc && req.oidc.user,
       expenses,
     });
   } catch (err) {
