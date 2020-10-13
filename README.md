@@ -74,7 +74,7 @@ The Secured Front End Web App is a simple express application that is intended t
 ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
 CLIENT_ID=your-app-client-id  \
 API_URL=http://url-to-expenses-api \
-npm run web-app:start
+npm run front-end-web-app:secure:start
 ```
 
 #### Vercel Deploy:
