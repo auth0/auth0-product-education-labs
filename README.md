@@ -60,14 +60,13 @@ The Secured Front End Web App is a simple express application that is intended t
 
 #### Environment Variables
 
-| Variable           | Value                                | Default |
-| ------------------ | ------------------------------------ | ------- |
-| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌      |
-| CLIENT_ID          | application client id from Auth0     | ❌      |
-| API_URL            | url for expenses api                 | ❌      |
-| SECRET             | openssl rand -hex 32                 | ✅      |
-| APP_SESSION_SECRET | openssl rand -hex 32                 | ✅      |
-| PORT               | **7000**                             | ✅      |
+| Variable        | Value                                | Default |
+| --------------- | ------------------------------------ | ------- |
+| ISSUER_BASE_URL | https://your-tenant.region.auth0.com | ❌      |
+| CLIENT_ID       | application client id from Auth0     | ❌      |
+| API_URL         | url for expenses api                 | ❌      |
+| SECRET          | openssl rand -hex 32                 | ✅      |
+| PORT            | **7000**                             | ✅      |
 
 #### Run Local:
 
@@ -86,14 +85,14 @@ https://vercel.com/new/git/external
   &env=
     ISSUER_BASE_URL,
     CLIENT_ID,
-    APP_SESSION_SECRET,
+    SECRET,
     API_URL,
     VERCEL_URL
   &project-name=front-end-web-app-secured
   &repository-name=front-end-web-app-secured
 ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-web-application-secure%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,VERCEL_URL,API_URL&project-name=front-end-web-app-secured&repo-name=front-end-web-app-secured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-web-application-secure%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,SECRET,VERCEL_URL,API_URL&project-name=front-end-web-app-secured&repo-name=front-end-web-app-secured)
 
 ## APIs
 
