@@ -97,6 +97,43 @@ https://vercel.com/new/git/external
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-web-application-secure%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,SECRET,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
 
+### Front End SPA App - Unsecured
+
+The Web SPA Application is intended to be used as a starting place for the learner to implement OIDC based Web Sign-In in a single page application
+
+#### Environment Variables
+
+| Variable  | Value                                | Default |
+| --------- | ------------------------------------ | ------- |
+| DOMAIN    | https://your-tenant.region.auth0.com | ❌      |
+| CLIENT_ID | application client id from Auth0     | ❌      |
+| PORT      | **8000**                             | ✅      |
+
+#### Run Local:
+
+```bash
+DOMAIN=https://your-tenant.region.auth0.com \
+CLIENT_ID=your-app-client-id  \
+npm run front-end-spa-app:start
+```
+
+#### Vercel Deploy:
+
+```
+https://vercel.com/new/git/external
+  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-spa-app-unsecured%2Fapps%2Ffront-end-spa-app-unsecured
+  &env=
+    DOMAIN,
+    CLIENT_ID,
+    NODE_ENV,
+    VERCEL_URL,
+    VERCEL_GITHUB_REPO
+  &project-name=front-end-web-spa-unsecured
+  &repository-name=front-end-web-spa-unsecured
+```
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-spa-app-unsecured%2Fapps%2Ffront-end-spa-app-unsecured&env=DOMAIN,CLIENT_ID,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-web-spa-unsecured&repository-name=front-end-web-spa-unsecured)
+
 ## APIs
 
 ### Expenses API - Secured
