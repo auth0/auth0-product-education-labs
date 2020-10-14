@@ -45,6 +45,14 @@ app.get("/reports", requiredScopes("read:reports"), (req, res) => {
   res.send(expenses);
 });
 
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.json({
+    status: err.status,
+    message: err.message,
+  });
+});
+
 const port = process.env.PORT || 5000;
 
 createServer(app).listen(port, () => {
