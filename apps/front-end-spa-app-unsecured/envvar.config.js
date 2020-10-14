@@ -1,3 +1,3 @@
 module.exports = {
-  permitted: ["PORT", "DOMAIN", "CLIENT_ID"],
+  allowed: ["PORT", "DOMAIN", "CLIENT_ID", "API_URL"],
 };

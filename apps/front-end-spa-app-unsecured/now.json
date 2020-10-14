@@ -3,7 +3,8 @@
   "build": {
     "env": {
       "DOMAIN":"@DOMAIN",
-      "CLIENT_ID":"@CLIENT_ID"
+      "CLIENT_ID":"@CLIENT_ID",
+      "API_URL":"@API_URL"
     }
   },
   "builds": [
