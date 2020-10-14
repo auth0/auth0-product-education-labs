@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Identity Labs</title>
+  </head>
+  <body>
+    <h1>Expenses Report</h1>
+    <p><a href="/">Home</a></p>
+    <p>Hello, <a href="/user"><%= user.name %></a>. These are your expenses:</p>
+    <table border="1">
+      <tr>
+        <% Object.keys(expenses[0]).forEach(k => { %>
+        <th><strong><%= k %></strong></th>
+        <% }) %>
+      </tr>
+      <% expenses.forEach(expense => { %>
+      <tr>
+        <% Object.keys(expense).forEach(k => { %>
+        <td><%= expense[k] %></td>
+        <% }) %>
+      </tr>
+      <% }) %>
+    </table>
+    <p>Don't spend too much.</p>
+  </body>
+</html>
