@@ -9,8 +9,9 @@ const port = process.env.PORT || 7000;
 const apiUrl = process.env.API_URL;
 let appUrl = `http://localhost:${port}`;
 
-if (process.env && process.env.VERCEL_URL) {
-  appUrl = `https://${process.env.VERCEL_URL}`;
+if (process.env && process.env.NODE_ENV === "production") {
+  const projectName = process.env.VERCEL_GITHUB_REPO;
+  appUrl = `https://${projectName}.vercel.app`;
 }
 
 const app = express();
