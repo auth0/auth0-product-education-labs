@@ -11,12 +11,13 @@ const {
   API_URL,
   SESSION_SECRET,
   VERCEL_GITHUB_REPO,
+  VERCEL_GITHUB_ORG,
 } = process.env;
 
 let appUrl = `http://localhost:${PORT}`;
 
 if (NODE_ENV === "production") {
-  appUrl = `https://${VERCEL_GITHUB_REPO}.vercel.app`;
+  appUrl = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG}.vercel.app`;
 }
 
 const app = express();
