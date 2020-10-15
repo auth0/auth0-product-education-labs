@@ -47,7 +47,7 @@ npm run web-app:start
 
 The Secured Front End Web App is a simple express application that is intended to be used as a starting point for hands on labs.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,SESSION_SECRET,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
 
 #### Environment Variables
 
@@ -55,7 +55,7 @@ The Secured Front End Web App is a simple express application that is intended t
 | ------------------ | ------------------------------------ | ----------- | ------- |
 | ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌          | ❌      |
 | CLIENT_ID          | application client id from Auth0     | ❌          | ❌      |
-| APP_SESSION_SECRET | openssl rand -hex 32                 | ❌          | ✅      |
+| SESSION_SECRET     | openssl rand -hex 32                 | ❌          | ✅      |
 | API_URL            | url for expenses api                 | ❌          | ❌      |
 | NODE_ENV           | production                           | ✅          | ❌      |
 | VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
