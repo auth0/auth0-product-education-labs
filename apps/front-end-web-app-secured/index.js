@@ -5,13 +5,18 @@ const request = require("request-promise");
 const session = require("express-session");
 const { auth, requiresAuth } = require("express-openid-connect");
 
-const port = process.env.PORT || 7000;
-const apiUrl = process.env.API_URL;
-let appUrl = `http://localhost:${port}`;
+const {
+  NODE_ENV = "development",
+  PORT = 7000,
+  API_URL,
+  SESSION_SECRET,
+  VERCEL_GITHUB_REPO,
+} = process.env;
 
-if (process.env && process.env.NODE_ENV === "production") {
-  const projectName = process.env.VERCEL_GITHUB_REPO;
-  appUrl = `https://${projectName}.vercel.app`;
+let appUrl = `http://localhost:${PORT}`;
+
+if (NODE_ENV === "production") {
+  appUrl = `https://${VERCEL_GITHUB_REPO}.vercel.app`;
 }
 
 const app = express();
@@ -22,7 +27,7 @@ app.use(morgan("combined"));
 
 app.use(
   session({
-    secret: process.env.SECRET,
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   })
@@ -31,6 +36,7 @@ app.use(
 app.use(
   auth({
     baseURL: appUrl,
+    secret: SESSION_SECRET,
     authRequired: false,
     auth0Logout: true,
   })
@@ -46,7 +52,7 @@ app.get("/user", requiresAuth(), (req, res) => {
 
 app.get("/expenses", requiresAuth(), async (req, res, next) => {
   try {
-    const expenses = await request(`${apiUrl}/reports`, {
+    const expenses = await request(`${API_URL}/reports`, {
       json: true,
     });
 
@@ -68,6 +74,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-createServer(app).listen(port, () => {
-  console.log(`listening on ${port}`);
+createServer(app).listen(PORT, () => {
+  console.log(`listening on ${PORT}`);
 });

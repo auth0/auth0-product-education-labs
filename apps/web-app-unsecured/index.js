@@ -2,6 +2,8 @@ const express = require("express");
 const { createServer } = require("http");
 const morgan = require("morgan");
 
+const { NODE_ENV = "development", PORT = 7000 } = process.env;
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -23,8 +25,6 @@ app.get("/expenses", (req, res) => {
   });
 });
 
-const port = process.env.PORT || 7000;
-
-createServer(app).listen(port, () => {
-  console.log(`listening on ${port}`);
+createServer(app).listen(PORT, () => {
+  console.log(`listening on ${PORT}`);
 });
