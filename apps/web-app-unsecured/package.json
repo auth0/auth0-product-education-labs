@@ -14,7 +14,11 @@
     "url": "git+https://github.com/auth0/auth0-product-education-labs.git"
   },
   "scripts": {
-    "start": "node index"
+    "start": "PORT=$npm_package_config_port SESSION_SECRET=$npm_package_config_session_secret node index"
+  },
+  "config": {
+    "port": 7000,
+    "session_secret": "e6de1374433dde92a5bae567b56b01de32ad0d4f0115b7675f5b985720210f4c"
   },
   "keywords": [
     "auth0",
