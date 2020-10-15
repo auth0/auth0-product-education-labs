@@ -135,7 +135,7 @@ npm run front-end-spa-app:start
 https://vercel.com/new/git/external
   ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-spa-app-unsecured%2Fapps%2Ffront-end-spa-app-unsecured
   &env=
-    DOMAIN,
+    AUTH0_DOMAIN,
     CLIENT_ID,
     API_URL,
     NODE_ENV,
@@ -145,7 +145,7 @@ https://vercel.com/new/git/external
   &repository-name=front-end-spa-app-unsecured
 ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-spa-app-unsecured%2Fapps%2Ffront-end-spa-app-unsecured&env=DOMAIN,CLIENT_ID,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-spa-app-unsecured&repository-name=front-end-spa-app-unsecured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-spa-app-unsecured%2Fapps%2Ffront-end-spa-app-unsecured&env=AUTH0_DOMAIN,CLIENT_ID,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-spa-app-unsecured&repository-name=front-end-spa-app-unsecured)
 
 ## APIs
 
