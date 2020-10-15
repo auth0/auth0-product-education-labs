@@ -104,7 +104,7 @@ npm run front-end-spa-app:start
 
 The Expenses API is a simple api that is secured using the [express-oauth2-bearer](https://github.com/auth0/express-oauth2-bearer) module.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=expenses-api&repository-name=expenses-api)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=expenses-api-secured&repository-name=expenses-api-secured)
 
 #### Environment Variables
 
