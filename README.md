@@ -21,6 +21,8 @@ A set of tools and example applications for Product Education courses.
 
 The Unsecured Web App is a simple express application that is intended to be used as a starting point for hands on labs.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=web-app-unsecured&repo-name=web-app-unsecured)
+
 #### Environment Variables
 
 | Variable           | Value                                | Vercel Only | Default |
@@ -41,27 +43,11 @@ CLIENT_ID=your-app-client-id  \
 npm run web-app:start
 ```
 
-#### Vercel Deploy:
-
-```
-https://vercel.com/new/git/external
-  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fweb-app-unsecured
-  &env=
-    ISSUER_BASE_URL,
-    CLIENT_ID,
-    APP_SESSION_SECRET,
-    NODE_ENV,
-    VERCEL_URL,
-    VERCEL_GITHUB_REPO
-  &project-name=web-app-unsecured
-  &repo-name=web-app-unsecured
-```
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=web-app-unsecured&repo-name=web-app-unsecured)
-
 ### Front End Web App - Secured
 
 The Secured Front End Web App is a simple express application that is intended to be used as a starting point for hands on labs.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
 
 #### Environment Variables
 
@@ -85,28 +71,11 @@ API_URL=http://url-to-expenses-api \
 npm run front-end-web-app:secure:start
 ```
 
-#### Vercel Deploy:
-
-```
-https://vercel.com/new/git/external
-  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured
-  &env=
-    ISSUER_BASE_URL,
-    CLIENT_ID,
-    APP_SESSION_SECRET,
-    API_URL,
-    NODE_ENV,
-    VERCEL_URL,
-    VERCEL_GITHUB_REPO
-  &project-name=front-end-web-app-secured
-  &repo-name=front-end-web-app-secured
-```
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
-
 ### Front End SPA App - Unsecured
 
-The Web SPA Application is intended to be used as a starting place for the learner to implement OIDC based Web Sign-In in a single page application
+The Web SPA Application is intended to be used as a starting place for the learner to implement OIDC based Web Sign-In in a single page application.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-spa-app-unsecured%2Fapps%2Ffront-end-spa-app-unsecured&env=AUTH0_DOMAIN,CLIENT_ID,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-spa-app-unsecured&repository-name=front-end-spa-app-unsecured)
 
 #### Environment Variables
 
@@ -129,29 +98,13 @@ API_URL=http://url-to-expenses-api
 npm run front-end-spa-app:start
 ```
 
-#### Vercel Deploy:
-
-```
-https://vercel.com/new/git/external
-  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-spa-app-unsecured%2Fapps%2Ffront-end-spa-app-unsecured
-  &env=
-    AUTH0_DOMAIN,
-    CLIENT_ID,
-    API_URL,
-    NODE_ENV,
-    VERCEL_URL,
-    VERCEL_GITHUB_REPO
-  &project-name=front-end-spa-app-unsecured
-  &repository-name=front-end-spa-app-unsecured
-```
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fvercel-front-end-spa-app-unsecured%2Fapps%2Ffront-end-spa-app-unsecured&env=AUTH0_DOMAIN,CLIENT_ID,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-spa-app-unsecured&repository-name=front-end-spa-app-unsecured)
-
 ## APIs
 
 ### Expenses API - Secured
 
 The Expenses API is a simple api that is secured using the [express-oauth2-bearer](https://github.com/auth0/express-oauth2-bearer) module.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=expenses-api&repository-name=expenses-api)
 
 #### Environment Variables
 
@@ -179,26 +132,11 @@ ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
 npm run expenses-api:secure:start
 ```
 
-#### Vercel Deploy:
-
-```
-https://vercel.com/new/git/external
-  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured
-  &env=
-    ISSUER_BASE_URL,
-    ALLOWED_AUDIENCES,
-    NODE_ENV,
-    VERCEL_URL,
-    VERCEL_GITHUB_REPO
-  &project-name=expenses-api
-  &repository-name=expenses-api
-```
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=expenses-api&repository-name=expenses-api)
-
 ### Expenses API - Unsecured
 
 The Unsecured Expenses API is a simple api that is intended to be used as a starting point for hands on labs.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=expenses-api-unsecured&repository-name=expenses-api-unsecured)
 
 #### Environment Variables
 
@@ -226,28 +164,13 @@ ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
 npm run expenses-api:start
 ```
 
-#### Vercel Deploy:
-
-```
-https://vercel.com/new/git/external
-  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured
-  &env=
-    ISSUER_BASE_URL,
-    ALLOWED_AUDIENCES,
-    NODE_ENV,
-    VERCEL_URL,
-    VERCEL_GITHUB_REPO
-  &project-name=expenses-api-unsecured
-  &repository-name=expenses-api-unsecured
-```
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=expenses-api-unsecured&repository-name=expenses-api-unsecured)
-
 ## Tools
 
 ### Initial Deploy
 
 The initial deploy tool is intended to be used as a test deployment between GitHub and Vercel.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Ftools%2Finitial-deploy&project-name=initial-deploy&repository-name=initial-deploy)
 
 #### Environment Variables
 
@@ -258,17 +181,6 @@ No environment variables are needed for initial deploy.
 ```bash
 npm run initial-deploy:start
 ```
-
-#### Vercel Deploy:
-
-```
-https://vercel.com/new/git/external
-  ?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Ftools%2Finitial-deploy
-  &project-name=initial-deploy
-  &repository-name=initial-deploy
-```
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Ftools%2Finitial-deploy&project-name=initial-deploy&repository-name=initial-deploy)
 
 ## Execution Environment
 
