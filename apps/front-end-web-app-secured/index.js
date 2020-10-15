@@ -17,7 +17,7 @@ const {
 let appUrl = `http://localhost:${PORT}`;
 
 if (NODE_ENV === "production") {
-  appUrl = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG}.vercel.app`;
+  appUrl = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
 }
 
 const app = express();
