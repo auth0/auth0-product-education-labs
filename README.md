@@ -41,12 +41,20 @@ The Unsecured Web App is a simple express application that is intended to be use
 | ------------------ | ------------------------------------ | ----------- | ------- |
 | ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌          | ❌      |
 | CLIENT_ID          | application client id from Auth0     | ❌          | ❌      |
-| APP_SESSION_SECRET | openssl rand -hex 32                 | ❌          | ✅      |
-| NODE_ENV           | production                           | ✅          | ❌      |
+| APP_SESSION_SECRET | long-random-string                   | ❌          | ✅      |
+| NODE_ENV           | **production**                       | ✅          | ❌      |
 | VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **7000**                             | ❌          | ✅      |
+
+##### Notes
+
+- [Vercel Deployment URLs](#vercel-deployment-urls)
+- [URLs in Environment Variables](#vercel-environment-variable-urls)
+- **APP_SESSION_SECRET** is used to encrypt cookie values, it should be a long random string value.
+  - To generate a sufficiently random string, use `openssl rand -hex 32` from your bash based terminal.
+- **NODE_ENV** should be set to a value of `production`
 
 #### Run Local:
 
@@ -76,6 +84,15 @@ The Secured Front End Web App is a simple express application that is intended t
 | VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **7000**                             | ❌          | ✅      |
 
+##### Notes
+
+- [Vercel Deployment URLs](#vercel-deployment-urls)
+- [URLs in Environment Variables](#vercel-environment-variable-urls)
+- **API_URL** will need to be a publically accessable url when deploying to Vercel.
+- **SESSION_SECRET** is used to encrypt cookie values, it should be a long random string value.
+  - To generate a sufficiently random string, use `openssl rand -hex 32` from your bash based terminal.
+- **NODE_ENV** should be set to a value of `production`
+
 #### Run Local:
 
 ```bash
@@ -103,6 +120,13 @@ The Web SPA Application is intended to be used as a starting place for the learn
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **8000**                             | ❌          | ✅      |
+
+##### Notes
+
+- [Vercel Deployment URLs](#vercel-deployment-urls)
+- [URLs in Environment Variables](#vercel-environment-variable-urls)
+- **API_URL** will need to be a publically accessable url when deploying to Vercel.
+- **NODE_ENV** should be set to a value of `production`
 
 #### Run Local:
 
@@ -132,6 +156,12 @@ The Expenses API is a simple api that is secured using the [express-oauth2-beare
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **5000**                             | ❌          | ✅      |
+
+##### Notes
+
+- [Vercel Deployment URLs](#vercel-deployment-urls)
+- [URLs in Environment Variables](#vercel-environment-variable-urls)
+- **NODE_ENV** should be set to a value of `production`
 
 #### Required Scopes
 
@@ -165,6 +195,12 @@ The Unsecured Expenses API is a simple api that is intended to be used as a star
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **5000**                             | ❌          | ✅      |
+
+##### Notes
+
+- [Vercel Deployment URLs](#vercel-deployment-urls)
+- [URLs in Environment Variables](#vercel-environment-variable-urls)
+- **NODE_ENV** should be set to a value of `production`
 
 #### Required Scopes
 
@@ -210,9 +246,37 @@ The tools and examples in this repository can be run in a number of ways. Each a
 
 ### Running in Vercel
 
-Vercel is a cloud based hosting service. Each individual tool and sample application can be deployed to Vercel by clicking the blue Deploy button.
+Vercel is a cloud based hosting service. Each individual tool and sample application can be deployed to Vercel by clicking the blue Deploy button. A wizard dialog will guide you through the deployment process.
 
-A wizard dialog will guide you through the deployment process.
+#### Vercel Environment Variable URLs
+
+When prompted for a url in the Vercel deployment wizard, it is important to include a scheme remove any trailing slash.
+
+| Example                 | Valid |
+| ----------------------- | ----- |
+| http://example.com/api  | ✅    |
+| https://example.com/api | ✅    |
+| http://example.com/api/ | ❌    |
+| example.com/api         | ❌    |
+
+#### Vercel Deployment URLs
+
+Each deployment to Vercel is assigned a unique immutable deployment URL. It is then aliased to a production URL that is based on the Vercel project name. If a project already exists on Vercel with a given project name, the production URL will have appended random text to make it unique.
+
+This causes a problem when attempting to configure some settings like `baseURL` in the `express-openid-connect` node module. For example, you may start on the production url of **https://myapp.vercel.app**, login using Auth0 and be retured to a completely different url of **https://myapp-sdfsdf.vercel.app**.
+
+To avoid this situation, these example applications attempt to use another option for the **baseURL** value that contains both the **VERCEL_GITHUB_REPO** and **VERCEL_GITHUB_ORG** environment variables.
+
+##### Example
+
+Given a **VERCEL_GITHUB_REPO** value of `my-repo` and **VERCEL_GITHUB_ORG** value of `auth0` these URLs are mapped by Vercel.
+
+| URL                                                               | Meets Expectation |
+| ----------------------------------------------------------------- | ----------------- |
+| https://my-repo.auth0.vercel.app                                  | ✅                |
+| https://my-repo-4m8guzwu.vercel.app                               | ❌                |
+| https://my-repo.vercel.app                                        | ❌                |
+| https://front-end-web-app-secured-git-master.notmyself.vercel.app | ❌                |
 
 ### Running in Codespaces
 
