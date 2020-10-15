@@ -7,8 +7,20 @@ A set of tools and example applications for Product Education courses.
 ## Index
 
 1. [Apps](#apps)
+
+   - [Web App - Unsecured](#web-app---unsecured)
+   - [Front End Web App - Secured](#front-end-web-app---secured)
+   - [Front End SPA App - Unsecured](#front-end-spa-app---unsecured)
+
 1. [APIs](#apis)
+
+   - [Expenses API - Secured](#expenses-api---secured)
+   - [Expenses API - Unsecured](#expenses-api---unsecured)
+
 1. [Tools](#tools)
+
+   - [Initial Deploy](#initial-deploy)
+
 1. [Execution Environment](#execution-environment)
 1. [Issue Reporting](#issue-reporting)
 1. [Contributing](#contributing)
