@@ -21,7 +21,7 @@ A set of tools and example applications for Product Education courses.
 
 The Unsecured Web App is a simple express application that is intended to be used as a starting point for hands on labs.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=web-app-unsecured&repository-name=web-app-unsecured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=web-app-unsecured&repository-name=web-app-unsecured)
 
 #### Environment Variables
 
@@ -33,6 +33,7 @@ The Unsecured Web App is a simple express application that is intended to be use
 | NODE_ENV           | production                           | ✅          | ❌      |
 | VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **7000**                             | ❌          | ✅      |
 
 #### Run Local:
@@ -47,7 +48,7 @@ npm run web-app:start
 
 The Secured Front End Web App is a simple express application that is intended to be used as a starting point for hands on labs.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,SESSION_SECRET,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,SESSION_SECRET,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
 
 #### Environment Variables
 
@@ -60,6 +61,7 @@ The Secured Front End Web App is a simple express application that is intended t
 | NODE_ENV           | production                           | ✅          | ❌      |
 | VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **7000**                             | ❌          | ✅      |
 
 #### Run Local:
@@ -75,7 +77,7 @@ npm run front-end-web-app:secure:start
 
 The Web SPA Application is intended to be used as a starting place for the learner to implement OIDC based Web Sign-In in a single page application.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-spa-app-unsecured&env=AUTH0_DOMAIN,CLIENT_ID,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=front-end-spa-app-unsecured&repo-name=front-end-spa-app-unsecured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-spa-app-unsecured&env=AUTH0_DOMAIN,CLIENT_ID,API_URL,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=front-end-spa-app-unsecured&repo-name=front-end-spa-app-unsecured)
 
 #### Environment Variables
 
@@ -87,6 +89,7 @@ The Web SPA Application is intended to be used as a starting place for the learn
 | NODE_ENV           | production                           | ✅          | ❌      |
 | VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **8000**                             | ❌          | ✅      |
 
 #### Run Local:
@@ -104,7 +107,7 @@ npm run front-end-spa-app:start
 
 The Expenses API is a simple api that is secured using the [express-oauth2-bearer](https://github.com/auth0/express-oauth2-bearer) module.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=expenses-api-secured&repository-name=expenses-api-secured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-secured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=expenses-api-secured&repository-name=expenses-api-secured)
 
 #### Environment Variables
 
@@ -115,6 +118,7 @@ The Expenses API is a simple api that is secured using the [express-oauth2-beare
 | NODE_ENV           | production                           | ✅          | ❌      |
 | VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **5000**                             | ❌          | ✅      |
 
 #### Required Scopes
@@ -136,7 +140,7 @@ npm run expenses-api:secure:start
 
 The Unsecured Expenses API is a simple api that is intended to be used as a starting point for hands on labs.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO&project-name=expenses-api-unsecured&repository-name=expenses-api-unsecured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-unsecured&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,NODE_ENV,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=expenses-api-unsecured&repository-name=expenses-api-unsecured)
 
 #### Environment Variables
 
@@ -147,6 +151,7 @@ The Unsecured Expenses API is a simple api that is intended to be used as a star
 | NODE_ENV           | production                           | ✅          | ❌      |
 | VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
 | VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
 | PORT               | **5000**                             | ❌          | ✅      |
 
 #### Required Scopes
