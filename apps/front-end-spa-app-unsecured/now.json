@@ -2,6 +2,7 @@
   "version": 2,
   "builds": [
     {
+      "use": "@vercel/static",
       "config": {
         "buildCommand": "npm run build",
         "distDir": "dist"

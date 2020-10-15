@@ -95,7 +95,7 @@ The Web SPA Application is intended to be used as a starting place for the learn
 #### Run Local:
 
 ```bash
-DOMAIN=https://your-tenant.region.auth0.com \
+AUTh0_DOMAIN=https://your-tenant.region.auth0.com \
 CLIENT_ID=your-app-client-id  \
 API_URL=http://url-to-expenses-api
 npm run front-end-spa-app:start
