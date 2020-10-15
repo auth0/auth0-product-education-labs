@@ -60,8 +60,12 @@ app.get("/expenses", requiresAuth(), async (req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send(err);
+  console.log(err);
+  res.status(err.error.status || 500);
+  res.render("error", {
+    statusCode: err.error.status || 500,
+    errorMessage: err.error.message,
+  });
 });
 
 createServer(app).listen(port, () => {

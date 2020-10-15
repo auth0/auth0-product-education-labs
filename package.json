@@ -14,7 +14,7 @@
   },
   "scripts": {
     "init": "concurrently \"npm:init:dependencies\" \"npm:init:environment\"",
-    "init:dependencies": "concurrently \"npm:expenses-api:secure:dependencies\" \"npm:expenses-api:dependencies\" \"npm:web-app:dependencies\" \"npm:front-end-web-app:secure:dependencies\"",
+    "init:dependencies": "concurrently \"npm:expenses-api:dependencies\" \"npm:expenses-api:secure:dependencies\" \"npm:web-app:dependencies\" \"npm:front-end-web-app:secure:dependencies\" \"npm:front-end-spa-app:dependencies\"",
     "init:environment": "",
     "initial-deploy:start": "http-server ./tools/initial-deploy -p $npm_package_config_initial_deploy_port -c-1",
     "expenses-api:start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audience npm start --prefix ./apis/expenses-api-unsecured",
@@ -24,11 +24,15 @@
     "web-app:start": "PORT=$npm_package_config_web_app_port APP_SESSION_SECRET=$npm_package_config_app_session_secret npm start --prefix ./apps/web-app-unsecured",
     "web-app:dependencies": "npm install --prefix ./apps/web-app-unsecured",
     "front-end-web-app:secure:start": "PORT=$npm_package_config_web_app_port SECRET=$npm_package_config_app_session_secret npm start --prefix ./apps/front-end-web-app-secured",
-    "front-end-web-app:secure:dependencies": "npm install --prefix ./apps/front-end-web-app-secured"
+    "front-end-web-app:secure:dependencies": "npm install --prefix ./apps/front-end-web-app-secured",
+    "front-end-spa-app:start": "PORT=$npm_package_config_spa_app_port npm start --prefix ./apps/front-end-spa-app-unsecured",
+    "front-end-spa-app:build": "npm run build --prefix ./apps/front-end-spa-app-unsecured --no-content-hash",
+    "front-end-spa-app:dependencies": "npm install --prefix ./apps/front-end-spa-app-unsecured"
   },
   "config": {
+    "spa_app_port": 8000,
     "web_app_port": 7000,
-    "app_session_secret":"e6de1374433dde92a5bae567b56b01de32ad0d4f0115b7675f5b985720210f4c",
+    "app_session_secret": "e6de1374433dde92a5bae567b56b01de32ad0d4f0115b7675f5b985720210f4c",
     "initial_deploy_port": 6000,
     "expense_api_port": 5000,
     "expense_api_audience": "https://expenses-api"
