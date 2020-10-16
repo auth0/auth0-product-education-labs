@@ -36,7 +36,7 @@
     "front-end-spa-app:dependencies": "npm install --prefix ./apps/front-end-spa-app-unsecured"
   },
   "config": {
-    "initial_deploy_port": 6000
+    "initial_deploy_port": 9000
   },
   "keywords": [
     "auth0",
