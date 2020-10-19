@@ -14,17 +14,25 @@ const {
   VERCEL_GITHUB_ORG,
 } = process.env;
 
-let appUrl = `http://localhost:${PORT}`;
-
-if (NODE_ENV === "production") {
-  appUrl = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
-}
-
 const app = express();
 
 app.set("view engine", "ejs");
 
 app.use(morgan("combined"));
+
+let appUrl = `http://localhost:${PORT}`;
+
+if (NODE_ENV === "production") {
+  appUrl = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
+
+  app.use((req, res, next) => {
+    const host = req.headers.host;
+    if (!appUrl.includes(host)) {
+      return res.status(301).redirect(appUrl);
+    }
+    return next();
+  });
+}
 
 app.use(
   session({
