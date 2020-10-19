@@ -2,7 +2,28 @@ const express = require("express");
 const cors = require("cors");
 const { createServer } = require("http");
 
+const {
+  NODE_ENV = "development",
+  PORT = 5000,
+  VERCEL_GITHUB_REPO,
+  VERCEL_GITHUB_ORG,
+} = process.env;
+
 const app = express();
+
+let appUrl = `http://localhost:${PORT}`;
+
+if (NODE_ENV === "production") {
+  appUrl = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
+
+  app.use((req, res, next) => {
+    const host = req.headers.host;
+    if (!appUrl.includes(host)) {
+      return res.status(301).redirect(appUrl);
+    }
+    return next();
+  });
+}
 
 app.use(cors());
 
