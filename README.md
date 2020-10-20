@@ -110,16 +110,16 @@ The Front End SPA Application is intended to be used as a starting place as a st
 
 #### Environment Variables
 
-| Variable           | Value                                | Vercel Only | Default |
-| ------------------ | ------------------------------------ | ----------- | ------- |
-| AUTH0_DOMAIN       | https://your-tenant.region.auth0.com | ❌          | ❌      |
-| CLIENT_ID          | application client id from Auth0     | ❌          | ❌      |
-| API_URL            | url for expenses api                 | ❌          | ❌      |
-| NODE_ENV           | production                           | ✅          | ❌      |
-| VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
-| PORT               | **8000**                             | ❌          | ✅      |
+| Variable           | Value                            | Vercel Only | Default |
+| ------------------ | -------------------------------- | ----------- | ------- |
+| AUTH0_DOMAIN       | your-tenant.region.auth0.com     | ❌          | ❌      |
+| CLIENT_ID          | application client id from Auth0 | ❌          | ❌      |
+| API_URL            | url for expenses api             | ❌          | ❌      |
+| NODE_ENV           | production                       | ✅          | ❌      |
+| VERCEL_URL         | value supplied by Vercel         | ✅          | ✅      |
+| VERCEL_GITHUB_REPO | value supplied by Vercel         | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel         | ✅          | ✅      |
+| PORT               | **8000**                         | ❌          | ✅      |
 
 ##### Notes
 
@@ -131,7 +131,7 @@ The Front End SPA Application is intended to be used as a starting place as a st
 #### Run Local:
 
 ```bash
-AUTh0_DOMAIN=https://your-tenant.region.auth0.com \
+AUTh0_DOMAIN=your-tenant.region.auth0.com \
 CLIENT_ID=your-app-client-id  \
 API_URL=http://url-to-expenses-api
 npm run front-end-spa-app:secure:start
@@ -145,16 +145,16 @@ The Front End SPA Application is intended to be used as a starting place for the
 
 #### Environment Variables
 
-| Variable           | Value                                | Vercel Only | Default |
-| ------------------ | ------------------------------------ | ----------- | ------- |
-| AUTH0_DOMAIN       | https://your-tenant.region.auth0.com | ❌          | ❌      |
-| CLIENT_ID          | application client id from Auth0     | ❌          | ❌      |
-| API_URL            | url for expenses api                 | ❌          | ❌      |
-| NODE_ENV           | production                           | ✅          | ❌      |
-| VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
-| PORT               | **8000**                             | ❌          | ✅      |
+| Variable           | Value                            | Vercel Only | Default |
+| ------------------ | -------------------------------- | ----------- | ------- |
+| AUTH0_DOMAIN       | your-tenant.region.auth0.com     | ❌          | ❌      |
+| CLIENT_ID          | application client id from Auth0 | ❌          | ❌      |
+| API_URL            | url for expenses api             | ❌          | ❌      |
+| NODE_ENV           | production                       | ✅          | ❌      |
+| VERCEL_URL         | value supplied by Vercel         | ✅          | ✅      |
+| VERCEL_GITHUB_REPO | value supplied by Vercel         | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel         | ✅          | ✅      |
+| PORT               | **8000**                         | ❌          | ✅      |
 
 ##### Notes
 
@@ -166,7 +166,7 @@ The Front End SPA Application is intended to be used as a starting place for the
 #### Run Local:
 
 ```bash
-AUTh0_DOMAIN=https://your-tenant.region.auth0.com \
+AUTH0_DOMAIN=your-tenant.region.auth0.com \
 CLIENT_ID=your-app-client-id  \
 API_URL=http://url-to-expenses-api
 npm run front-end-spa-app:start
