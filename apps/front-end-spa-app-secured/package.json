@@ -1,0 +1,48 @@
+{
+  "name": "front-end-spa-app-secured",
+  "version": "1.0.0",
+  "description": "Auth0 Labs Sample SPA Application",
+  "license": "MIT",
+  "author": "Auth0",
+  "bugs": {
+    "url": "https://github.com/auth0/auth0-product-education-labs/issues"
+  },
+  "homepage": "https://github.com/auth0/auth0-product-education-labs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0/auth0-product-education-labs.git"
+  },
+  "scripts": {
+    "start": "concurrently \"npm:start:nodemon\" \"npm:start:parcel\" \"npm:start:http-server\"",
+    "start:http-server": "http-server ./dist/ -p $npm_package_config_spa_app_port -c-1",
+    "start:nodemon": "nodemon -e html --ignore dist/ --ignore node_modules --exec \"npm run build:html\"",
+    "start:parcel": "parcel watch app.js ./scripts/*.js",
+    "build": "concurrently \"npm:build:html\" \"npm:build:js\"",
+    "build:html": "find . -name '*.html' ! -path \"./node_modules/*\" ! -path \"./dist/*\"| cpio -pdm ./dist",
+    "build:js": "parcel build app.js ./scripts/*.js --no-content-hash"
+  },
+  "config": {
+    "spa_app_port": 8000
+  },
+  "keywords": [
+    "auth0",
+    "vercel",
+    "openid",
+    "oidc",
+    "auth",
+    "authentication",
+    "samples",
+    "tools",
+    "labs"
+  ],
+  "dependencies": {
+    "concurrently": "5.3.0",
+    "http-server": "0.12.3",
+    "nodemon": "2.0.4",
+    "parcel-bundler": "1.12.4",
+    "envvar-allowlist": "auth0/parcel-plugin-envvar-allowlist"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}
