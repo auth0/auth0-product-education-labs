@@ -131,7 +131,7 @@ The Front End SPA Application is intended to be used as a starting place as a st
 #### Run Local:
 
 ```bash
-AUTh0_DOMAIN=your-tenant.region.auth0.com \
+AUTH0_DOMAIN=your-tenant.region.auth0.com \
 CLIENT_ID=your-app-client-id  \
 API_URL=http://url-to-expenses-api
 npm run front-end-spa-app:secure:start
