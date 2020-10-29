@@ -1,17 +1,15 @@
 const {
   ISSUER_BASE_URL,
   ALLOWED_AUDIENCES,
-  NODE_ENV = "development",
   VERCEL_URL,
   VERCEL_GITHUB_REPO,
   VERCEL_GITHUB_ORG,
   PORT = 5000,
 } = process.env;
 
-const appUrl =
-  NODE_ENV === "production"
-    ? `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`
-    : `http://localhost:${PORT}`;
+const appUrl = VERCEL_URL
+  ? `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`
+  : `http://localhost:${PORT}`;
 
 function checkUrl() {
   return (req, res, next) => {
