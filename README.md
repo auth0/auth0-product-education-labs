@@ -11,6 +11,7 @@ A set of tools and example applications for Product Education courses.
    - [Web App - Unsecured](#web-app---unsecured)
    - [Front End Web App - Secured](#front-end-web-app---secured)
    - [Front End SPA App - Unsecured](#front-end-spa-app---unsecured)
+   - [Front End SPA App - Secured](#front-end-spa-app---secured)
 
 1. [APIs](#apis)
 
