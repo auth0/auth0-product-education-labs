@@ -221,15 +221,15 @@ The Unsecured Expenses API is a simple api that is intended to be used as a star
 
 #### Environment Variables
 
-| Variable           | Value                                | Vercel Only | Default |
-| ------------------ | ------------------------------------ | ----------- | ------- |
-| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌          | ❌      |
-| ALLOWED_AUDIENCES  | **https://expenses-api**             | ❌          | ✅      |
-| NODE_ENV           | production                           | ✅          | ❌      |
-| VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
-| PORT               | **5000**                             | ❌          | ✅      |
+| Variable           | Value                                | Config           | Vercel Only | Default |
+| ------------------ | ------------------------------------ | ---------------- | ----------- | ------- |
+| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | issuerBaseUrl    | ❌          | ❌      |
+| ALLOWED_AUDIENCES  | **https://expenses-api**             | allowedAudiences | ❌          | ✅      |
+| NODE_ENV           | production                           |                  | ✅          | ❌      |
+| VERCEL_URL         | value supplied by Vercel             |                  | ✅          | ✅      |
+| VERCEL_GITHUB_REPO | value supplied by Vercel             |                  | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel             |                  | ✅          | ✅      |
+| PORT               | **5000**                             | port             | ❌          | ✅      |
 
 ##### Notes
 
