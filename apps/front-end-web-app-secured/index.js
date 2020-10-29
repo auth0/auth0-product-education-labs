@@ -4,39 +4,27 @@ const morgan = require("morgan");
 const request = require("request-promise");
 const session = require("express-session");
 const { auth, requiresAuth } = require("express-openid-connect");
-
 const {
-  NODE_ENV = "development",
-  PORT = 7000,
-  API_URL,
-  SESSION_SECRET,
-  VERCEL_GITHUB_REPO,
-  VERCEL_GITHUB_ORG,
-} = process.env;
+  appUrl,
+  apiUrl,
+  checkUrl,
+  issuerBaseUrl,
+  clientId,
+  secret,
+  port,
+} = require("./env-config");
 
 const app = express();
+
+app.use(checkUrl());
 
 app.set("view engine", "ejs");
 
 app.use(morgan("combined"));
 
-let appUrl = `http://localhost:${PORT}`;
-
-if (NODE_ENV === "production") {
-  appUrl = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
-
-  app.use((req, res, next) => {
-    const host = req.headers.host;
-    if (!appUrl.includes(host)) {
-      return res.status(301).redirect(appUrl);
-    }
-    return next();
-  });
-}
-
 app.use(
   session({
-    secret: SESSION_SECRET,
+    secret: secret,
     resave: false,
     saveUninitialized: true,
   })
@@ -45,7 +33,7 @@ app.use(
 app.use(
   auth({
     baseURL: appUrl,
-    secret: SESSION_SECRET,
+    secret: secret,
     authRequired: false,
     auth0Logout: true,
   })
@@ -83,6 +71,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-createServer(app).listen(PORT, () => {
-  console.log(`listening on ${PORT}`);
+createServer(app).listen(port, () => {
+  console.log(`listening on ${port}`);
 });

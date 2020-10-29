@@ -72,17 +72,17 @@ The Secured Front End Web App is a simple express application that is intended t
 
 #### Environment Variables
 
-| Variable           | Value                                | Vercel Only | Default |
-| ------------------ | ------------------------------------ | ----------- | ------- |
-| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌          | ❌      |
-| CLIENT_ID          | application client id from Auth0     | ❌          | ❌      |
-| SESSION_SECRET     | openssl rand -hex 32                 | ❌          | ✅      |
-| API_URL            | url for expenses api                 | ❌          | ❌      |
-| NODE_ENV           | production                           | ✅          | ❌      |
-| VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
-| PORT               | **7000**                             | ❌          | ✅      |
+| Variable           | Value                                | Config        | Vercel Only | Default |
+| ------------------ | ------------------------------------ | ------------- | ----------- | ------- |
+| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | issuerBaseUrl | ❌          | ❌      |
+| CLIENT_ID          | application client id from Auth0     | clientId      | ❌          | ❌      |
+| SESSION_SECRET     | openssl rand -hex 32                 | secret        | ❌          | ✅      |
+| API_URL            | url for expenses api                 | apiUrl        | ❌          | ❌      |
+| NODE_ENV           | production                           |               | ✅          | ❌      |
+| VERCEL_URL         | value supplied by Vercel             |               | ✅          | ✅      |
+| VERCEL_GITHUB_REPO | value supplied by Vercel             |               | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel             |               | ✅          | ✅      |
+| PORT               | **7000**                             | port          | ❌          | ✅      |
 
 ##### Notes
 

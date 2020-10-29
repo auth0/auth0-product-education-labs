@@ -3,7 +3,6 @@ const { createServer } = require("http");
 const morgan = require("morgan");
 const {
   appUrl,
-  apiUrl,
   checkUrl,
   issuerBaseUrl,
   clientId,
