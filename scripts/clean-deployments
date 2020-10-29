@@ -1,4 +1,26 @@
 #!/usr/bin/env node
+
+/**********************************************************************
+ * This script will remove all Vercel projects and GitHub repositories
+ * in the case where the Vercel project links to the GitHub repository.
+ *
+ * It requires the following environment variables:
+ * - VERCEL_TOKEN - Create it here https://vercel.com/account/tokens
+ * - GITHUB_TOKEN - Create it here https://github.com/settings/tokens
+ *  - requires the delete_repo scope
+ *
+ * You can securely store these values in 1Password and access them
+ * via CLI.
+ *
+ * https://grantorchard.com/securing-environment-variables-with-1password/
+ *
+ * You can add these helper functions to your shell to automate usage.
+ *
+ * https://github.com/NotMyself/dotfiles/blob/master/system/.function#L6-L30
+ *
+ * execute as `envvars-1p && scripts/clean-deployments`
+ **********************************************************************/
+
 const axios = require("axios");
 const assert = require("assert");
 
@@ -49,6 +71,11 @@ function map(projects) {
       .then((res) => res.data.projects)
       .then(filter)
       .then(map);
+
+    if (projects.length === 0) {
+      console.log("No projects found.");
+      return process.exit(0);
+    }
 
     for (const p of projects) {
       await github.delete(`/repos/${p.github.org}/${p.github.repo}`);
