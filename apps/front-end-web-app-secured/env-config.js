@@ -23,6 +23,14 @@ function checkUrl() {
   };
 }
 
+console.log("----------------------------------");
+console.log(`appUrl: ${appUrl}`);
+console.log(`apiUrl: ${API_URL}`);
+console.log(`issuerBaseUrl: ${ISSUER_BASE_URL}`);
+console.log(`clientId: ${CLIENT_ID}`);
+console.log(`secret: ${SESSION_SECRET}`);
+console.log("----------------------------------");
+
 module.exports = {
   appUrl,
   apiUrl: API_URL,
