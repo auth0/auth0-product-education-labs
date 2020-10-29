@@ -21,6 +21,12 @@ function checkUrl() {
   };
 }
 
+function removeTrailingSlashFromUrl(url) {
+  if (!url.endsWith("/")) return url;
+
+  return url.substring(0, url.length - 1);
+}
+
 console.log("----------------------------------");
 console.log(`appUrl: ${appUrl}`);
 console.log(`issuerBaseUrl: ${ISSUER_BASE_URL}`);
@@ -30,7 +36,7 @@ console.log("----------------------------------");
 module.exports = {
   appUrl,
   checkUrl,
-  issuerBaseUrl: ISSUER_BASE_URL,
+  issuerBaseUrl: removeTrailingSlashFromUrl(ISSUER_BASE_URL),
   allowedAudiences: ALLOWED_AUDIENCES,
   port: PORT,
 };
