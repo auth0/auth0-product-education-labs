@@ -22,13 +22,20 @@
  **********************************************************************/
 
 const axios = require("axios");
+const chalk = require("chalk");
 const assert = require("assert");
 
 const VERCEL_API_URL = "https://api.vercel.com";
 const GITHUB_API_URL = "https://api.github.com";
 
-assert.ok(process.env.VERCEL_TOKEN, "VERCEL_TOKEN env var not found.");
-assert.ok(process.env.GITHUB_TOKEN, "GITHUB_TOKEN env var not found.");
+assert.ok(
+  process.env.VERCEL_TOKEN,
+  chalk.bold.red("VERCEL_TOKEN env var not found.")
+);
+assert.ok(
+  process.env.GITHUB_TOKEN,
+  chalk.bold.red("GITHUB_TOKEN env var not found.")
+);
 
 const vercel = axios.create({
   baseURL: VERCEL_API_URL,
@@ -73,7 +80,7 @@ function map(projects) {
       .then(map);
 
     if (projects.length === 0) {
-      console.log("No projects found.");
+      console.log(chalk.red("No projects found."));
       return process.exit(0);
     }
 
@@ -81,7 +88,9 @@ function map(projects) {
       await github.delete(`/repos/${p.github.org}/${p.github.repo}`);
       await vercel.delete(`/v1/projects/${p.vercel.name}`);
       console.log(
-        `Deleted -> Vercel: ${p.vercel.name} Github: ${p.github.repo}`
+        `${chalk.red("Deleted")} -> ${chalk.bold("Vercel:")} ${
+          p.vercel.name
+        } ${chalk.bold("Github:")} ${p.github.repo}`
       );
     }
 
