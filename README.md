@@ -37,16 +37,16 @@ The Unsecured Web App is a simple express application that is intended to be use
 
 #### Environment Variables
 
-| Variable           | Value                                | Vercel Only | Default |
-| ------------------ | ------------------------------------ | ----------- | ------- |
-| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | ❌          | ❌      |
-| CLIENT_ID          | application client id from Auth0     | ❌          | ❌      |
-| APP_SESSION_SECRET | long-random-string                   | ❌          | ✅      |
-| NODE_ENV           | **production**                       | ✅          | ❌      |
-| VERCEL_URL         | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_REPO | value supplied by Vercel             | ✅          | ✅      |
-| VERCEL_GITHUB_ORG  | value supplied by Vercel             | ✅          | ✅      |
-| PORT               | **7000**                             | ❌          | ✅      |
+| Variable           | Value                                | Config        | Vercel Only | Default |
+| ------------------ | ------------------------------------ | ------------- | ----------- | ------- |
+| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | issuerBaseUrl | ❌          | ❌      |
+| CLIENT_ID          | application client id from Auth0     | clientId      | ❌          | ❌      |
+| APP_SESSION_SECRET | long-random-string                   | secret        | ❌          | ✅      |
+| NODE_ENV           | **production**                       |               | ✅          | ❌      |
+| VERCEL_URL         | value supplied by Vercel             |               | ✅          | ✅      |
+| VERCEL_GITHUB_REPO | value supplied by Vercel             |               | ✅          | ✅      |
+| VERCEL_GITHUB_ORG  | value supplied by Vercel             |               | ✅          | ✅      |
+| PORT               | **7000**                             | port          | ❌          | ✅      |
 
 ##### Notes
 
