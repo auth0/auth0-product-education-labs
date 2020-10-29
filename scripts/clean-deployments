@@ -1,0 +1,66 @@
+#!/usr/bin/env node
+const axios = require("axios");
+const assert = require("assert");
+
+const VERCEL_API_URL = "https://api.vercel.com";
+const GITHUB_API_URL = "https://api.github.com";
+
+assert.ok(process.env.VERCEL_TOKEN, "VERCEL_TOKEN env var not found.");
+assert.ok(process.env.GITHUB_TOKEN, "GITHUB_TOKEN env var not found.");
+
+const vercel = axios.create({
+  baseURL: VERCEL_API_URL,
+  headers: {
+    Authorization: `Bearer ${process.env.VERCEL_TOKEN}`,
+  },
+});
+
+const github = axios.create({
+  baseURL: GITHUB_API_URL,
+  headers: {
+    Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+  },
+});
+
+function filter(projects) {
+  return projects.filter((p) => p.link && p.link.type === "github");
+}
+
+function map(projects) {
+  return projects.map((p) => {
+    return {
+      vercel: {
+        id: p.id,
+        name: p.name,
+      },
+      github: {
+        repo: p.link.repo,
+        repoId: p.link.repoId,
+        org: p.link.org,
+      },
+    };
+  });
+}
+
+(async function () {
+  try {
+    const projects = await vercel
+      .get("/v4/projects", { limit: 100 })
+      .then((res) => res.data.projects)
+      .then(filter)
+      .then(map);
+
+    for (const p of projects) {
+      await github.delete(`/repos/${p.github.org}/${p.github.repo}`);
+      await vercel.delete(`/v1/projects/${p.vercel.name}`);
+      console.log(
+        `Deleted -> Vercel: ${p.vercel.name} Github: ${p.github.repo}`
+      );
+    }
+
+    process.exit(0);
+  } catch (e) {
+    console.log(e);
+    process.exit(1);
+  }
+})();
