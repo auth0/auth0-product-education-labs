@@ -2,29 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const { createServer } = require("http");
 const { auth, requiredScopes } = require("express-oauth2-bearer");
-
 const {
-  NODE_ENV = "development",
-  PORT = 5000,
-  VERCEL_GITHUB_REPO,
-  VERCEL_GITHUB_ORG,
-} = process.env;
+  appUrl,
+  checkUrl,
+  issuerBaseUrl,
+  allowedAudiences,
+  port,
+} = require("./env-config");
 
 const app = express();
 
-let appUrl = `http://localhost:${PORT}`;
-
-if (NODE_ENV === "production") {
-  appUrl = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
-
-  app.use((req, res, next) => {
-    const host = req.headers.host;
-    if (!appUrl.includes(host)) {
-      return res.status(301).redirect(appUrl);
-    }
-    return next();
-  });
-}
+app.use(checkUrl());
 
 app.use(cors());
 
@@ -73,8 +61,6 @@ app.use((err, req, res, next) => {
     message: err.message,
   });
 });
-
-const port = process.env.PORT || 5000;
 
 createServer(app).listen(port, () => {
   console.log(`listening on ${port}`);
