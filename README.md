@@ -33,7 +33,7 @@ A set of tools and example applications for Product Education courses.
 
 The Unsecured Web App is a simple express application that is intended to be used as a starting point for hands on labs.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,APP_SESSION_SECRET,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=web-app-unsecured&repository-name=web-app-unsecured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fweb-app-unsecured&env=ISSUER_BASE_URL,CLIENT_ID,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=web-app-unsecured&repository-name=web-app-unsecured)
 
 #### Environment Variables
 
@@ -41,7 +41,6 @@ The Unsecured Web App is a simple express application that is intended to be use
 | ------------------ | ------------------------------------ | ------------- | ----------- | ------- |
 | ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | issuerBaseUrl | ❌          | ❌      |
 | CLIENT_ID          | application client id from Auth0     | clientId      | ❌          | ❌      |
-| APP_SESSION_SECRET | long-random-string                   | secret        | ❌          | ✅      |
 | VERCEL_URL         | value supplied by Vercel             |               | ✅          | ✅      |
 | VERCEL_GITHUB_REPO | value supplied by Vercel             |               | ✅          | ✅      |
 | VERCEL_GITHUB_ORG  | value supplied by Vercel             |               | ✅          | ✅      |
@@ -51,8 +50,6 @@ The Unsecured Web App is a simple express application that is intended to be use
 
 - [Vercel Deployment URLs](#vercel-deployment-urls)
 - [URLs in Environment Variables](#vercel-environment-variable-urls)
-- **APP_SESSION_SECRET** is used to encrypt cookie values, it should be a long random string value.
-  - To generate a sufficiently random string, use `openssl rand -hex 32` from your bash based terminal.
 
 #### Run Local:
 
@@ -66,7 +63,7 @@ npm run web-app:start
 
 The Secured Front End Web App is a simple express application that is intended to be used as a starting point for hands on labs.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,SESSION_SECRET,API_URL,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Ffront-end-web-app-secured&env=ISSUER_BASE_URL,CLIENT_ID,API_URL,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=front-end-web-app-secured&repository-name=front-end-web-app-secured)
 
 #### Environment Variables
 
@@ -74,7 +71,6 @@ The Secured Front End Web App is a simple express application that is intended t
 | ------------------ | ------------------------------------ | ------------- | ----------- | ------- |
 | ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | issuerBaseUrl | ❌          | ❌      |
 | CLIENT_ID          | application client id from Auth0     | clientId      | ❌          | ❌      |
-| SESSION_SECRET     | openssl rand -hex 32                 | secret        | ❌          | ✅      |
 | API_URL            | url for expenses api                 | apiUrl        | ❌          | ❌      |
 | VERCEL_URL         | value supplied by Vercel             |               | ✅          | ✅      |
 | VERCEL_GITHUB_REPO | value supplied by Vercel             |               | ✅          | ✅      |
@@ -86,8 +82,6 @@ The Secured Front End Web App is a simple express application that is intended t
 - [Vercel Deployment URLs](#vercel-deployment-urls)
 - [URLs in Environment Variables](#vercel-environment-variable-urls)
 - **API_URL** will need to be a publically accessable url when deploying to Vercel.
-- **SESSION_SECRET** is used to encrypt cookie values, it should be a long random string value.
-  - To generate a sufficiently random string, use `openssl rand -hex 32` from your bash based terminal.
 
 #### Run Local:
 
