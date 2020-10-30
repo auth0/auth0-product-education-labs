@@ -36,5 +36,5 @@ app.get("/expenses", (req, res) => {
 });
 
 createServer(app).listen(PORT, () => {
-  console.log(`API: ${APP_URL}`);
+  console.log(`WEB APP: ${APP_URL}`);
 });

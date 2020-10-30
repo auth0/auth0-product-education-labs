@@ -5,17 +5,18 @@ const request = require("request-promise");
 const session = require("express-session");
 const { auth, requiresAuth } = require("express-openid-connect");
 const {
-  appUrl,
-  apiUrl,
   checkUrl,
-  issuerBaseUrl,
-  clientId,
-  secret,
-  port,
+  APP_URL, // Public URL for this app
+  API_URL, // URL for Expenses API
+  ISSUER_BASE_URL, // Auth0 Tenant Url
+  CLIENT_ID, // Auth0 Web App Client
+  SESSION_SECRET, // Cookie Encryption Key
+  PORT,
 } = require("./env-config");
 
 const app = express();
 
+// Used to normalize URL in Vercel
 app.use(checkUrl());
 
 app.set("view engine", "ejs");
@@ -24,7 +25,7 @@ app.use(morgan("combined"));
 
 app.use(
   session({
-    secret: secret,
+    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
   })
@@ -32,8 +33,10 @@ app.use(
 
 app.use(
   auth({
-    baseURL: appUrl,
-    secret: secret,
+    issuerBaseURL: ISSUER_BASE_URL, // may be ommited
+    baseURL: APP_URL,
+    clientID: CLIENT_ID, // may be ommited
+    secret: SESSION_SECRET, // may be ommited
     authRequired: false,
     auth0Logout: true,
   })
@@ -71,6 +74,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-createServer(app).listen(port, () => {
-  console.log(`listening on ${port}`);
+createServer(app).listen(PORT, () => {
+  console.log(`WEB APP: ${APP_URL}`);
 });
