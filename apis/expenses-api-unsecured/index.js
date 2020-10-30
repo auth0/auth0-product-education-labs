@@ -11,6 +11,7 @@ const {
 
 const app = express();
 
+// Used to normalize URL in Vercel
 app.use(checkUrl());
 
 app.use(cors());
