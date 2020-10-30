@@ -27,16 +27,17 @@ function removeTrailingSlashFromUrl(url) {
   return url.substring(0, url.length - 1);
 }
 
-console.log("----------------------------------");
-console.log(`appUrl: ${appUrl}`);
-console.log(`issuerBaseUrl: ${ISSUER_BASE_URL}`);
-console.log(`allowedAudiences: ${ALLOWED_AUDIENCES}`);
-console.log("----------------------------------");
+console.log("\n----------------------------------");
+console.log("Envronment Settings:");
+console.log(`APP_URL: ${appUrl}`);
+console.log(`ISSUER_BASE_URL: ${ISSUER_BASE_URL}`);
+console.log(`ALLOWED_AUDIENCES: ${ALLOWED_AUDIENCES}`);
+console.log("----------------------------------\n");
 
 module.exports = {
-  appUrl,
   checkUrl,
-  issuerBaseUrl: removeTrailingSlashFromUrl(ISSUER_BASE_URL),
-  allowedAudiences: ALLOWED_AUDIENCES,
-  port: PORT,
+  APP_URL: appUrl,
+  ISSUER_BASE_URL: removeTrailingSlashFromUrl(ISSUER_BASE_URL),
+  ALLOWED_AUDIENCES: ALLOWED_AUDIENCES,
+  PORT: PORT,
 };
