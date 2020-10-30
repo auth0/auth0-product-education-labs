@@ -2,11 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const { createServer } = require("http");
 const {
-  appUrl,
   checkUrl,
-  issuerBaseUrl,
-  allowedAudiences,
-  port,
+  APP_URL, // Public URL for this app
+  ISSUER_BASE_URL, // Auth0 Tenant Url
+  ALLOWED_AUDIENCES, // Auth0 API Audience List
+  PORT,
 } = require("./env-config");
 
 const app = express();
@@ -49,6 +49,6 @@ app.get("/reports", (req, res) => {
   res.send(expenses);
 });
 
-createServer(app).listen(port, () => {
-  console.log(`listening on ${port}`);
+createServer(app).listen(PORT, () => {
+  console.log(`API: ${APP_URL}`);
 });
