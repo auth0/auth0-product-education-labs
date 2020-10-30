@@ -2,16 +2,17 @@ const express = require("express");
 const { createServer } = require("http");
 const morgan = require("morgan");
 const {
-  appUrl,
   checkUrl,
-  issuerBaseUrl,
-  clientId,
-  secret,
-  port,
+  APP_URL, // Public URL for this app
+  ISSUER_BASE_URL, // Auth0 Tenant Url
+  CLIENT_ID, // Auth0 Web App Client
+  SESSION_SECRET, // Cookie Encryption Key
+  PORT,
 } = require("./env-config");
 
 const app = express();
 
+// Used to normalize URL in Vercel
 app.use(checkUrl());
 
 app.set("view engine", "ejs");
@@ -34,6 +35,6 @@ app.get("/expenses", (req, res) => {
   });
 });
 
-createServer(app).listen(port, () => {
-  console.log(`listening on ${port}`);
+createServer(app).listen(PORT, () => {
+  console.log(`API: ${APP_URL}`);
 });
