@@ -9,14 +9,14 @@ A set of tools and example applications for Product Education courses.
 1. [Apps](#apps)
 
    - [Regular Web App](#regular-web-app)
-   - [Regular Web App v2.0](#regular-web-app-v2.0)
+   - [Regular Web App v2.0](#regular-web-app-v20)
    - [Single Page App](#single-page-app)
-   - [Single Page App v2.0](#single-page-app-v2.0)
+   - [Single Page App v2.0](#single-page-app-v20)
 
 1. [APIs](#apis)
 
    - [Expenses API](#expenses-api)
-   - [Expenses API v2.0](#expenses-api-v2.0)
+   - [Expenses API v2.0](#expenses-api-v20)
 
 1. [Tools](#tools)
 
