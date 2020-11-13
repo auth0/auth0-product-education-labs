@@ -1,4 +1,5 @@
 {
+  "name": "expenses-api-express",
   "version": 2,
   "rewrites": [
     {

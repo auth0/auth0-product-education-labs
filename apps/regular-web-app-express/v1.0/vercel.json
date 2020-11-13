@@ -1,4 +1,5 @@
 {
+  "name": "regular-web-app-express",
   "version": 2,
   "builds": [
     {
