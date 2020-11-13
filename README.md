@@ -8,10 +8,10 @@ A set of tools and example applications for Product Education courses.
 
 1. [Apps](#apps)
 
-- [Regular Web App](#regular-web-app)
-- [Regular Web App v2.0](#regular-web-app-v2.0)
-- [Single Page App](#single-page-app)
-- [Single Page App v2.0](#single-page-app-v2.0)
+   - [Regular Web App](#regular-web-app)
+   - [Regular Web App v2.0](#regular-web-app-v2.0)
+   - [Single Page App](#single-page-app)
+   - [Single Page App v2.0](#single-page-app-v2.0)
 
 1. [APIs](#apis)
 
