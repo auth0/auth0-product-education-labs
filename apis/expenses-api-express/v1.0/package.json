@@ -1,10 +1,10 @@
 {
-  "name": "expenses-api-unsecured",
+  "name": "expenses-api-express",
   "version": "1.0.0",
   "description": "Auth0 Labs Sample API",
   "license": "MIT",
   "author": "Auth0",
-  "main": "index.js",
+  "main": "api/index.js",
   "bugs": {
     "url": "https://github.com/auth0/auth0-product-education-labs/issues"
   },
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/auth0/auth0-product-education-labs.git"
   },
   "scripts": {
-    "start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audienc node index"
+    "start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audience node api/index"
   },
   "config": {
     "expense_api_port": 5000,
