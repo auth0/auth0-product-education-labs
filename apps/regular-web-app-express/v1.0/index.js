@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const path = require("path");
 const { createServer } = require("http");
+const { auth } = require("express-openid-connect");
 
 const {
   checkUrl,
@@ -20,10 +21,8 @@ const app = express();
 
 // Used to normalize URL in Vercel
 app.use(checkUrl());
-
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
-
 app.use(logger("combined"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -35,6 +34,14 @@ app.use(
     secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
+  })
+);
+
+app.use(
+  auth({
+    secret: SESSION_SECRET,
+    auth0Logout: true,
+    baseURL: APP_URL,
   })
 );
 

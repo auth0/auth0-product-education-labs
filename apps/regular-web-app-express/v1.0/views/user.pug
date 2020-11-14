@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .content
+    h1=user.name
+    table(border='1')
+      tr
+        th name
+        th value
+      each key in Object.keys(user)
+        tr
+          td=key
+          td=user[key]
