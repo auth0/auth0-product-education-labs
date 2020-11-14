@@ -1,5 +1,5 @@
 {
-  "name": "Web Application",
+  "name": "Expenses API",
   "dockerFile": "Dockerfile",
 
   // Use 'settings' to set *default* container specific settings.json values on container create.

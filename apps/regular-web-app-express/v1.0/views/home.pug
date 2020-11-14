@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .content
+    h1 Home Page
+    p
+    | Hello,
+    |
+    if user
+      a(href='/user')=user.name
+    else
+      | Anonymous
+    |.
+
+

@@ -1,0 +1,20 @@
+ul(class='navigation', role='navigation')
+  li.logo
+    a(href='/')
+      img(src='/images/auth0.png')
+  li
+      a(href='/') Home
+  if user
+    li
+      a(href='/expenses') Expenses
+    li.spacer
+    li
+      a(href='/logout') Logout
+    li.profile
+      img.picture(src='user.picture')
+  else
+    li.spacer
+    li
+      a(href='/login') Login
+    li.profile
+      img(src='https://s.gravatar.com/avatar/f3ada405ce890b6f8204094deb12d8a8?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Ffo.png')
