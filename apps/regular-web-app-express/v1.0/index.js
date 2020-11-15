@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const path = require("path");
 const { createServer } = require("http");
-const { auth } = require("express-openid-connect");
+// 👉 Replace this with express-openid-connect require 👈
 
 const {
   checkUrl,
@@ -13,14 +13,14 @@ const {
   API_URL, // URL for Expenses API
   ISSUER_BASE_URL, // Auth0 Tenant Url
   CLIENT_ID, // Auth0 Web App Client
+  CLIENT_SECRET, // Auth0 Web App CLient Secret
   SESSION_SECRET, // Cookie Encryption Key
   PORT,
 } = require("./env-config");
 
 const app = express();
 
-// Used to normalize URL in Vercel
-app.use(checkUrl());
+app.use(checkUrl()); // Used to normalize URL in Vercel
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(logger("combined"));
@@ -37,17 +37,30 @@ app.use(
   })
 );
 
-app.use(
-  auth({
-    secret: SESSION_SECRET,
-    auth0Logout: true,
-    baseURL: APP_URL,
-  })
-);
+// 👉 Replace this with auth middlware 👈
+
+const expenses = [
+  {
+    date: new Date(),
+    description: "Pizza for a Coding Dojo session.",
+    value: 102,
+  },
+  {
+    date: new Date(),
+    description: "Coffee for a Coding Dojo session.",
+    value: 42,
+  },
+];
 
 app.get("/", (req, res) => {
-  res.render("home", { user: req.oidc && req.oidc.user });
+  res.render("home", {
+    user: req.oidc && req.oidc.user,
+    total: expenses.reduce((accum, expense) => accum + expense.value, 0),
+    count: expenses.length,
+  });
 });
+
+// 👇 add requiresAuth middlware to these private routes  👇
 
 app.get("/user", (req, res) => {
   res.render("user", { user: req.oidc && req.oidc.user });
@@ -56,18 +69,7 @@ app.get("/user", (req, res) => {
 app.get("/expenses", async (req, res, next) => {
   res.render("expenses", {
     user: req.oidc && req.oidc.user,
-    expenses: [
-      {
-        date: new Date(),
-        description: "Pizza for a Coding Dojo session.",
-        value: 102,
-      },
-      {
-        date: new Date(),
-        description: "Coffee for a Coding Dojo session.",
-        value: 42,
-      },
-    ],
+    expenses,
   });
 });
 
