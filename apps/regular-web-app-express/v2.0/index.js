@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const path = require("path");
 const { createServer } = require("http");
-// 👉 Replace this with express-openid-connect require 👈
+const { auth, requiresAuth } = require("express-openid-connect");
 
 const {
   checkUrl,
@@ -37,7 +37,14 @@ app.use(
   })
 );
 
-// 👉 Replace this with auth middleware 👈
+app.use(
+  auth({
+    secret: SESSION_SECRET,
+    authRequired: false,
+    auth0Logout: true,
+    baseURL: APP_URL,
+  })
+);
 
 const expenses = [
   {
@@ -60,13 +67,11 @@ app.get("/", (req, res) => {
   });
 });
 
-// 👇 add requiresAuth middlware to these private routes  👇
-
-app.get("/user", (req, res) => {
+app.get("/user", requiresAuth(), (req, res) => {
   res.render("user", { user: req.oidc && req.oidc.user });
 });
 
-app.get("/expenses", async (req, res, next) => {
+app.get("/expenses", requiresAuth(), async (req, res, next) => {
   res.render("expenses", {
     user: req.oidc && req.oidc.user,
     expenses,
