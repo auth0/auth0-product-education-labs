@@ -6,190 +6,24 @@ A set of tools and example applications for Product Education courses.
 
 ## Index
 
-1. [Apps](#apps)
+1. Apps
 
-   - [Regular Web App](#regular-web-app)
-   - [Single Page App](#single-page-app)
+   - [Regular Web App](apps/regular-web-app-express/README.md)
+   - [Single Page App](apps/single-page-app-vanillajs/README.md)
 
-1. [APIs](#apis)
+1. APIs
 
-   - [Expenses API](#expenses-api)
+   - [Expenses API](apis/expenses-api-express/README.md)
 
-1. [Tools](#tools)
+1. Tools
 
-   - [Initial Deploy](#initial-deploy)
+   - [Initial Deploy](tools/initial-deploy/README.md)
 
 1. [Execution Environment](#execution-environment)
 1. [Issue Reporting](#issue-reporting)
 1. [Contributing](#contributing)
 1. [Author](#author)
 1. [License](#license)
-
-## Apps
-
-### Regular Web App
-
-The Regular Web App is a simple express application that is intended to be used as a starting point for hands on labs.
-
-#### Environment Variables
-
-| Variable           | Value                                | Config        | Vercel Only | Default |
-| ------------------ | ------------------------------------ | ------------- | ----------- | ------- |
-| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | issuerBaseUrl | ❌          | ❌      |
-| CLIENT_ID          | application client id from Auth0     | clientId      | ❌          | ❌      |
-| VERCEL_URL         | value supplied by Vercel             |               | ✅          | ✅      |
-| VERCEL_GITHUB_REPO | value supplied by Vercel             |               | ✅          | ✅      |
-| VERCEL_GITHUB_ORG  | value supplied by Vercel             |               | ✅          | ✅      |
-| PORT               | **7000**                             | port          | ❌          | ✅      |
-
-##### Notes
-
-- [Vercel Deployment URLs](#vercel-deployment-urls)
-- [URLs in Environment Variables](#vercel-environment-variable-urls)
-
-#### Version 1.0
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fregular-web-app-express%2Fv1.0&env=ISSUER_BASE_URL,CLIENT_ID,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=web-app&repository-name=web-app)
-
-#### Run Local:
-
-```bash
-ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
-CLIENT_ID=your-app-client-id  \
-npm run web-app:start
-```
-
-### Single Page App
-
-The Single Page App is intended to be used as a starting place as a starting point for hands on labs.
-
-#### Environment Variables
-
-| Variable           | Value                            | Vercel Only | Default |
-| ------------------ | -------------------------------- | ----------- | ------- |
-| AUTH0_DOMAIN       | your-tenant.region.auth0.com     | ❌          | ❌      |
-| CLIENT_ID          | application client id from Auth0 | ❌          | ❌      |
-| API_URL            | url for expenses api             | ❌          | ❌      |
-| VERCEL_URL         | value supplied by Vercel         | ✅          | ✅      |
-| VERCEL_GITHUB_REPO | value supplied by Vercel         | ✅          | ✅      |
-| VERCEL_GITHUB_ORG  | value supplied by Vercel         | ✅          | ✅      |
-| PORT               | **8000**                         | ❌          | ✅      |
-
-##### Notes
-
-- [Vercel Deployment URLs](#vercel-deployment-urls)
-- [URLs in Environment Variables](#vercel-environment-variable-urls)
-- **API_URL** will need to be a publically accessable url when deploying to Vercel.
-
-#### Version 1.0
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fsingle-page-app-vanillajs%2Fv1.0&env=AUTH0_DOMAIN,CLIENT_ID,API_URL,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=single-page-app&repository-name=single-page-app)
-
-##### Run Local:
-
-```bash
-AUTH0_DOMAIN=your-tenant.region.auth0.com \
-CLIENT_ID=your-app-client-id  \
-API_URL=http://url-to-expenses-api
-npm run spa:start
-```
-
-## APIs
-
-### Expenses API
-
-The Expenses API is a simple api that is intended to be used as a starting point for hands on labs.
-
-#### Environment Variables
-
-| Variable           | Value                                | Config           | Vercel Only | Default |
-| ------------------ | ------------------------------------ | ---------------- | ----------- | ------- |
-| ISSUER_BASE_URL    | https://your-tenant.region.auth0.com | issuerBaseUrl    | ❌          | ❌      |
-| ALLOWED_AUDIENCES  | **https://expenses-api**             | allowedAudiences | ❌          | ✅      |
-| VERCEL_URL         | value supplied by Vercel             |                  | ✅          | ✅      |
-| VERCEL_GITHUB_REPO | value supplied by Vercel             |                  | ✅          | ✅      |
-| VERCEL_GITHUB_ORG  | value supplied by Vercel             |                  | ✅          | ✅      |
-| PORT               | **5000**                             | port             | ❌          | ✅      |
-
-##### Notes
-
-- [Vercel Deployment URLs](#vercel-deployment-urls)
-- [URLs in Environment Variables](#vercel-environment-variable-urls)
-
-#### Version 1.0
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-express%2Fv1.0&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=expenses-api&repository-name=expenses-api)
-
-##### Run Local:
-
-```bash
-ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
-npm run expenses-api:start
-```
-
-##### Required Scopes
-
-| Endpoint   | Secure | Scopes |
-| ---------- | ------ | ------ |
-| `/`        | ❌     |        |
-| `/total`   | ❌     |        |
-| `/reports` | ❌     |        |
-
-#### Version 2.0
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-express%2Fv2.0&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=expenses-api&repository-name=expenses-api)
-
-##### Run Local:
-
-```bash
-ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
-npm run expenses-api:v2:start
-```
-
-##### Required Scopes
-
-| Endpoint   | Secure | Scopes |
-| ---------- | ------ | ------ |
-| `/`        | ❌     |        |
-| `/total`   | ❌     |        |
-| `/reports` | ✅     |        |
-
-#### Version 3.0
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapis%2Fexpenses-api-express%2Fv3.0&env=ISSUER_BASE_URL,ALLOWED_AUDIENCES,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=expenses-api&repository-name=expenses-api)
-
-##### Run Local:
-
-```bash
-ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
-npm run expenses-api:v3:start
-```
-
-##### Required Scopes
-
-| Endpoint   | Secure | Scopes         |
-| ---------- | ------ | -------------- |
-| `/`        | ❌     |                |
-| `/total`   | ❌     |                |
-| `/reports` | ✅     | `read:reports` |
-
-## Tools
-
-### Initial Deploy
-
-The initial deploy tool is intended to be used as a test deployment between GitHub and Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Ftools%2Finitial-deploy&project-name=initial-deploy&repository-name=initial-deploy)
-
-#### Environment Variables
-
-No environment variables are needed for initial deploy.
-
-#### Run Local:
-
-```bash
-npm run initial-deploy:start
-```
 
 ## Execution Environment
 
