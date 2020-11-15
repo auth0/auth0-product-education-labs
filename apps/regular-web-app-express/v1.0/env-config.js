@@ -2,6 +2,7 @@ const {
   ISSUER_BASE_URL,
   API_URL,
   CLIENT_ID,
+  CLIENT_SECRET,
   SESSION_SECRET = "e6de1374433dde92a5bae567b56b01de32ad0d4f0115b7675f5b985720210f4c",
   VERCEL_URL,
   VERCEL_GITHUB_REPO,
@@ -31,10 +32,12 @@ function removeTrailingSlashFromUrl(url) {
 
 console.log("\n----------------------------------");
 console.log("Envronment Settings:");
-console.log(`APP_URL: ${appUrl}`);
-console.log(`API_URL: ${API_URL}`);
 console.log(`ISSUER_BASE_URL: ${ISSUER_BASE_URL}`);
+console.log(`API_URL: ${API_URL}`);
 console.log(`CLIENT_ID: ${CLIENT_ID}`);
+if (CLIENT_SECRET) console.log(`CLIENT_SECRET: Has Value`);
+else console.log(`CLIENT_SECRET: Not Set`);
+console.log(`APP_URL: ${appUrl}`);
 console.log(`SESSION_SECRET: ${SESSION_SECRET}`);
 console.log("----------------------------------\n");
 
@@ -44,6 +47,7 @@ module.exports = {
   API_URL: removeTrailingSlashFromUrl(API_URL),
   ISSUER_BASE_URL: removeTrailingSlashFromUrl(ISSUER_BASE_URL),
   CLIENT_ID: CLIENT_ID,
+  CLIENT_SECRET: CLIENT_SECRET,
   SESSION_SECRET: SESSION_SECRET,
   PORT: PORT,
 };
