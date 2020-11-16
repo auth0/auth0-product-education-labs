@@ -121,6 +121,24 @@ li.logo img {
     0px 3px 8px rgba(0, 0, 0, 0.0379303);
   border-radius: 3px;
   z-index: 1;
+  animation: scaleZ 300ms ease-in-out forwards;
+  transform-origin: top left;
+}
+
+@keyframes scaleZ {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  80% {
+    transform: scale(1.07);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Links inside the dropdown */

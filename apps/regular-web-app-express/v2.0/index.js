@@ -59,7 +59,7 @@ const expenses = [
   },
 ];
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
   res.render("home", {
     user: req.oidc && req.oidc.user,
     total: expenses.reduce((accum, expense) => accum + expense.value, 0),
@@ -67,7 +67,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/user", requiresAuth(), (req, res) => {
+app.get("/user", requiresAuth(), async (req, res) => {
   res.render("user", {
     user: req.oidc && req.oidc.user,
     id_token: req.oidc && req.oidc.idToken,

@@ -60,7 +60,7 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.get("/user", requiresAuth(), (req, res) => {
+app.get("/user", requiresAuth(), async (req, res) => {
   res.render("user", {
     user: req.oidc && req.oidc.user,
     id_token: req.oidc && req.oidc.idToken,
