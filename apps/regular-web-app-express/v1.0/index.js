@@ -62,7 +62,7 @@ app.get("/", (req, res) => {
 
 // 👇 add requiresAuth middlware to these private routes  👇
 
-app.get("/user", requiresAuth(), (req, res) => {
+app.get("/user", (req, res) => {
   res.render("user", {
     user: req.oidc && req.oidc.user,
     id_token: req.oidc && req.oidc.idToken,
