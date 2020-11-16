@@ -1,6 +1,7 @@
 {
   "name": "web-app-express",
   "version": "1.0.0",
+  "private": true,
   "description": "Auth0 Labs Sample Web Application",
   "license": "MIT",
   "author": "Auth0",
@@ -32,12 +33,14 @@
     "labs"
   ],
   "dependencies": {
-    "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "express-openid-connect": "^2.0.0",
     "express-session": "^1.17.1",
-    "morgan": "^1.10.0",
-    "request": "^2.88.2",
-    "request-promise": "^4.2.6"
+    "express-openid-connect": "^2.0.0",
+    "cookie-parser": "~1.4.5",
+    "http-errors": "~1.8.0",
+    "morgan": "~1.10.0",
+    "debug": "~4.2.0",
+    "pug": "3.0.0",
+    "axios": "^0.21.0"
   }
 }

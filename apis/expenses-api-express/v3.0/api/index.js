@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const { createServer } = require("http");
-const { auth } = require("express-oauth2-bearer");
+const { auth, requiredScopes } = require("express-oauth2-bearer");
 const {
   checkUrl,
   APP_URL, // Public URL for this app
@@ -51,7 +51,7 @@ app.get("/total", (req, res) => {
 app.use(auth());
 // 👇 private routes below 👇
 
-app.get("/reports", (req, res) => {
+app.get("/reports", requiredScopes("read:reports"), (req, res) => {
   res.send(expenses);
 });
 
