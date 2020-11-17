@@ -4,4 +4,4 @@ block content
   .content
     h1= message
     h2= error.status
-    pre #{error.stack}
+    pre #{error.stack.replace(/\/.*\/regular-web-app-express\/v\d.\d/g,'')}
