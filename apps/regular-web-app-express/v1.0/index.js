@@ -66,7 +66,8 @@ app.get("/user", async (req, res) => {
   res.render("user", {
     user: req.oidc && req.oidc.user,
     id_token: req.oidc && req.oidc.idToken,
-    access_token: req.oidc && req.oidc.accessToken,
+    access_token:
+      req.oidc && req.oidc.accessToken && req.oidc.accessToken.access_token,
     refresh_token: req.oidc && req.oidc.refreshToken,
   });
 });
