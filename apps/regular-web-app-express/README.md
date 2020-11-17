@@ -268,8 +268,6 @@ npm run web-app:v4:start
 
 #### Step 1
 
-Add the CLIENT_SECRET environment variable to the Vercel project manually if needed.
-
 Update the auth middleware configuration object to include the code response type and the expenses api audience.
 
 ```javascript
@@ -279,36 +277,13 @@ app.use(
     authRequired: false,
     auth0Logout: true,
     baseURL: APP_URL,
-    // 👇 add this 👇
     authorizationParams: {
-      response_type: "code",
+      response_type: "code id_token",
       audience: "https://expenses-api",
+      // 👇 add this 👇
+      scope: "openid profile email read:reports",
+      // 👆 add this 👆
     },
-    // 👆 add this 👆
   })
 );
-```
-
-Update the expenses route handler to use the access token to authroize the api request.
-
-```javascript
-app.get("/expenses", requiresAuth(), async (req, res, next) => {
-  try {
-    // 👇 get the token from the request 👇
-    const { token_type, access_token } = req.oidc.accessToken;
-    // 👇 then send it as an authorization header 👇
-    const expenses = await axios.get(`${API_URL}/reports`, {
-      headers: {
-        Authorization: `${token_type} ${access_token}`,
-      },
-    });
-    // 👆 end of changes 👆
-    res.render("expenses", {
-      user: req.oidc && req.oidc.user,
-      expenses: expenses.data,
-    });
-  } catch (err) {
-    next(err);
-  }
-});
 ```
