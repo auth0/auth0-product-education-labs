@@ -194,6 +194,7 @@ This version of the regular web app is the starting place used in A0FUN-M06-L01 
 ```bash
 ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
 CLIENT_ID=your-app-client-id  \
+CLIENT_SECRET=your-app-client-secret \
 API_URL=http://localhost:5000 \
 npm run web-app:v3:start
 ```
@@ -201,3 +202,48 @@ npm run web-app:v3:start
 ### Changes
 
 #### Step 1
+
+Add the CLIENT_SECRET environment variable to the Vercel project manually if needed.
+
+Update the auth middleware configuration object to include the code response type and the expenses api audience.
+
+```javascript
+app.use(
+  auth({
+    secret: SESSION_SECRET,
+    authRequired: false,
+    auth0Logout: true,
+    baseURL: APP_URL,
+    // 👇 add this 👇
+    authorizationParams: {
+      response_type: "code",
+      audience: "https://expenses-api",
+    },
+    // 👆 add this 👆
+  })
+);
+```
+
+Update the expenses route handler to use the access token to authroize the api request.
+
+```javascript
+app.get("/expenses", requiresAuth(), async (req, res, next) => {
+  try {
+    // 👇 get the token from the request 👇
+    const { token_type, access_token } = req.oidc.accessToken;
+    // 👇 then send it as an authorization header 👇
+    const expenses = await axios.get(`${API_URL}/reports`, {
+      headers: {
+        Authorization: `${token_type} ${access_token}`,
+      },
+    });
+    // 👆 end of changes 👆
+    res.render("expenses", {
+      user: req.oidc && req.oidc.user,
+      expenses: expenses.data,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+```
