@@ -252,7 +252,7 @@ app.get("/expenses", requiresAuth(), async (req, res, next) => {
 
 This version of the regular web app is the starting place used in IDFUN-M02-L02 Create an Working with APIs.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fregular-web-app-express%2Fv4.0&env=ISSUER_BASE_URL,CLIENT_ID,API_URL,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=web-app&repository-name=web-app)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fregular-web-app-express%2Fv4.0&env=ISSUER_BASE_URL,CLIENT_ID,CLIENT_SECRET,API_URL,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=web-app&repository-name=web-app)
 
 ### Run Local:
 
@@ -286,4 +286,20 @@ app.use(
     },
   })
 );
+```
+
+## Version 5.0
+
+This version of the regular web app is the complete version.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fregular-web-app-express%2Fv5.0&env=ISSUER_BASE_URL,CLIENT_ID,CLIENT_SECRET,API_URL,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=web-app&repository-name=web-app)
+
+### Run Local:
+
+```bash
+ISSUER_BASE_URL=https://your-tenant.region.auth0.com \
+CLIENT_ID=your-app-client-id  \
+CLIENT_SECRET=your-app-client-secret \
+API_URL=http://localhost:5000 \
+npm run web-app:v5:start
 ```
