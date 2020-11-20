@@ -1,4 +1,6 @@
-# Expenses API Express - The Expenses API is a simple api that is intended to be used as a starting point for hands on labs.
+# Expenses API Express 
+
+The Expenses API is a simple API that is intended to be used as a starting point for hands on labs.
 
 ## Environment Variables
 
@@ -13,8 +15,8 @@
 
 ### Notes
 
-- [Vercel Deployment URLs](../../README.md#vercel-deployment-urls)
-- [URLs in Environment Variables](../../README.md#vercel-environment-variable-urls)
+- [Vercel Deployment URLs](https://github.com/auth0/auth0-product-education-labs/blob/master/README.md#vercel-deployment-urls)
+- [URLs in Environment Variables](https://github.com/auth0/auth0-product-education-labs/blob/master/README.md#vercel-environment-variable-urls)
 
 ## Version 1.0
 
