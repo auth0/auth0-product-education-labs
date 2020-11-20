@@ -22,7 +22,7 @@ block content
       if id_token
         +token(id_token, 'id-token')
       if access_token
-        +token(access_token, 'access-token')
+        +token(access_token.access_token, 'access-token')
       if refresh_token
         +token(refresh_token, 'refresh-token')
     table(border='1')
@@ -33,3 +33,9 @@ block content
         tr
           td=key
           td=user[key]
+    if access_token
+      -
+        const date = new Date();
+        date.setSeconds(date.getSeconds() + access_token.expires_in);
+        console.log(date);
+      p=`Access Token Expires: ${date.toLocaleString('en-US')}`
