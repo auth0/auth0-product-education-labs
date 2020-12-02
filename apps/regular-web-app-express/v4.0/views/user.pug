@@ -22,7 +22,7 @@ block content
       if id_token
         +token(id_token, 'id-token')
       if access_token
-        +token(access_token, 'access-token')
+        +token(access_token.access_token, 'access-token')
       if refresh_token
         +token(refresh_token, 'refresh-token')
     table(border='1')
