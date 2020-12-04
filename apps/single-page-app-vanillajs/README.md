@@ -32,3 +32,46 @@ CLIENT_ID=your-app-client-id  \
 API_URL=http://url-to-expenses-api
 npm run spa:start
 ```
+
+### Changes
+
+#### Step 1
+
+Replace the comment in `index.html` with the follwing script reference.
+
+```html
+<script src="https://cdn.auth0.com/js/auth0-spa-js/1.1.0/auth0-spa-js.production.js"></script>
+```
+
+Replace the comment in `app.js` with the following code.
+
+```javascript
+const domain = process.env.AUTH0_DOMAIN;
+const client_id = process.env.CLIENT_ID;
+
+window.auth0Client = await createAuth0Client({
+  domain,
+  client_id,
+});
+```
+
+Replace next comment in `app.js` with the following code.
+
+```javascript
+if (requestedView === "#callback") {
+  await window.auth0Client.handleRedirectCallback();
+  window.history.replaceState({}, document.title, "/");
+}
+```
+
+Replace the allowAccess function wiht the following code.
+
+```javascript
+async function allowAccess() {
+  if (!(await window.auth0Client.isAuthenticated())) {
+    await loadView("#home", content);
+    return false;
+  }
+  return true;
+}
+```

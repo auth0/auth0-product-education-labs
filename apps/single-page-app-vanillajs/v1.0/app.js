@@ -4,6 +4,9 @@ const loadingIndicator = document.getElementById("loading-indicator");
 
 window.onload = async function () {
   let requestedView = window.location.hash;
+  // 👉 Replace this with client creation 👈
+
+  // 👉 Replace this with callback handler 👈
 
   await loadView("#navbar", navbar);
 
@@ -36,7 +39,9 @@ async function loadView(viewName, container) {
   container.style.display = "block";
 }
 
+// 👇 Replace this function 👇
 async function allowAccess() {
   await loadView("#home", content);
   return false;
 }
+// 👆 Replace this function 👆
