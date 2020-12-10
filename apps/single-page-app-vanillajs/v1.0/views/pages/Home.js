@@ -14,7 +14,7 @@ const Home = {
       ${summary.total.toFixed(2)}
       </strong> dollars</li>
     </ul>
-    </div>    
+    </div>
     `;
     return view;
   },
