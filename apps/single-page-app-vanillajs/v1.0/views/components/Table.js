@@ -1,12 +1,12 @@
-let format = (data) => {
+const format = (data) => {
   if (typeof data === "number") return `$${data.toFixed(2)}`;
   if (data instanceof Date) return data.toLocaleDateString("en-US");
   return data;
 };
 
-let Data = (data) => /*html*/ `<td>${format(data)}</td>`;
+const Data = (data) => /*html*/ `<td>${format(data)}</td>`;
 
-let Body = (data) =>
+const Body = (data) =>
   data
     .map(
       (data) => /*html*/ `<tr>
@@ -17,13 +17,13 @@ let Body = (data) =>
     )
     .join("\n ");
 
-let Header = (labels) => /*html*/ `
+const Header = (labels) => /*html*/ `
 <tr>
   ${labels.map((l) => /*html*/ `<th><strong>${l}</strong></th>`).join("\n ")}
 </tr>
 `;
 
-let Table = {
+const Table = {
   render: async (data) => /*html*/ `
   <table border="1">
     ${Header(Object.keys(data[0]))}

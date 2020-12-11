@@ -1,6 +1,7 @@
-let Error404 = {
+const Error404 = {
+  allowAccess: async () => true,
   render: async () => {
-    let view = /*html*/ `
+    const view = /*html*/ `
       <h1>Not Found</h1>
     `;
     return view;
