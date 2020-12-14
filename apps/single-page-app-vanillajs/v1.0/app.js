@@ -1,42 +1,13 @@
-const content = document.getElementById("content");
-const navbar = document.getElementById("navbar-container");
-const loadingIndicator = document.getElementById("loading-indicator");
+import router from "./router";
 
-window.onload = async function () {
-  let requestedView = window.location.hash;
+(async function () {
+  // 👉 Replace this with client creation 👈
 
-  await loadView("#navbar", navbar);
+  // handle user navigation
+  window.addEventListener("hashchange", router);
+  window.addEventListener("load", router);
 
-  window.location.hash = requestedView;
-};
-
-window.onhashchange = async function () {
-  let requestedView = window.location.hash;
-
-  if (requestedView !== "#home" && requestedView !== "#expenses") {
-    requestedView = "#home";
-  }
-
-  await loadView(requestedView, content);
-};
-
-async function loadView(viewName, container) {
-  container.innerHTML = "";
-  viewName = viewName.substring(1);
-  window.history.replaceState({}, document.title, `/#${viewName}`);
-  const response = await fetch(`/views/${viewName}.html`);
-  container.innerHTML = await response.text();
-
-  var scriptTag = document.createElement("script");
-  scriptTag.src = `/scripts/${viewName}.js`;
-
-  container.appendChild(scriptTag);
-
-  loadingIndicator.style.display = "none";
-  container.style.display = "block";
-}
-
-async function allowAccess() {
-  await loadView("#home", content);
-  return false;
-}
+  //handle user reload of browser
+  if (sessionStorage.getItem("reload")) await router();
+  sessionStorage.setItem("reload", "true");
+})();

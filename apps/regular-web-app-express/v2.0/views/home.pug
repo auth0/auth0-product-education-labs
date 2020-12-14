@@ -4,13 +4,13 @@ block content
   .content
     h1 Home Page
     p
-    | Hello,
-    |
-    if user
-      a(href='/user')=user.name
-    else
-      | Anonymous
-    |.
+      | Hello,
+      |
+      if user
+        a(href='/user')=user.name
+      else
+        | Anonymous
+      |.
     p So far, this app has been used to manage:
       ul
         li
