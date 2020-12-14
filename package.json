@@ -14,7 +14,7 @@
   },
   "scripts": {
     "init": "concurrently \"npm:init:dependencies\" \"npm:init:environment\"",
-    "init:dependencies": "concurrently \"npm:expenses-api:dependencies\" \"npm:expenses-api:v2:dependencies\" \"npm:expenses-api:v3:dependencies\" \"npm:web-app:dependencies\" \"npm:web-app:v2:dependencies\" \"npm:web-app:v3:dependencies\" \"npm:web-app:v4:dependencies\" \"npm:web-app:v5:dependencies\" \"npm:spa:dependencies\"",
+    "init:dependencies": "concurrently \"npm:expenses-api:dependencies\" \"npm:expenses-api:v2:dependencies\" \"npm:expenses-api:v3:dependencies\" \"npm:web-app:dependencies\" \"npm:web-app:v2:dependencies\" \"npm:web-app:v3:dependencies\" \"npm:web-app:v4:dependencies\" \"npm:web-app:v5:dependencies\" \"npm:spa:dependencies\" \"npm:spa:v2:dependencies\"",
     "init:environment": "",
     "initial-deploy:start": "http-server ./tools/initial-deploy -p $npm_package_config_initial_deploy_port -c-1",
     "expenses-api:start": "npm start --prefix ./apis/expenses-api-express/v1.0",
@@ -35,7 +35,10 @@
     "web-app:v5:dependencies": "npm install --prefix ./apps/regular-web-app-express/v5.0",
     "spa:start": "npm run dev --prefix ./apps/single-page-app-vanillajs/v1.0",
     "spa:build": "npm run build --prefix ./apps/single-page-app-vanillajs/v1.0",
-    "spa:dependencies": "npm install --prefix ./apps/single-page-app-vanillajs/v1.0"
+    "spa:dependencies": "npm install --prefix ./apps/single-page-app-vanillajs/v1.0",
+    "spa:v2:start": "npm run dev --prefix ./apps/single-page-app-vanillajs/v2.0",
+    "spa:v2:build": "npm run build --prefix ./apps/single-page-app-vanillajs/v2.0",
+    "spa:v2:dependencies": "npm install --prefix ./apps/single-page-app-vanillajs/v2.0"
   },
   "config": {
     "initial_deploy_port": 9000

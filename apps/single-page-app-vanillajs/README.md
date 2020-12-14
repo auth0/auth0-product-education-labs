@@ -40,7 +40,7 @@ npm run spa:start
 Replace the comment in `index.html` with the follwing script reference.
 
 ```html
-<script src="https://cdn.auth0.com/js/auth0-spa-js/1.1.0/auth0-spa-js.production.js"></script>
+<script src="https://cdn.auth0.com/js/auth0-spa-js/1.13.5/auth0-spa-js.production.js"></script>
 ```
 
 Replace the comment in `app.js` with the following code.
