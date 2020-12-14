@@ -8,7 +8,6 @@ window.user = {
 };
 
 const Navbar = {
-  allowAccess: async () => true,
   render: async () => {
     const isAuthenticated = false; // 👈 Replace this with isAuthenticated check
     const view = /*html*/ `

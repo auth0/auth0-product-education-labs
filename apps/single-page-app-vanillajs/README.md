@@ -46,13 +46,55 @@ Replace the comment in `index.html` with the follwing script reference.
 Replace the comment in `app.js` with the following code.
 
 ```javascript
-const domain = process.env.AUTH0_DOMAIN;
-const client_id = process.env.CLIENT_ID;
+const domain = window.env.AUTH0_DOMAIN;
+const client_id = window.env.CLIENT_ID;
+const redirect_uri = window.env.APP_URL;
 
 window.auth0Client = await createAuth0Client({
   domain,
   client_id,
+  redirect_uri,
 });
 ```
 
-Replace next comment in `app.js` with the following code.
+Replace the first comment in `router.js` with the following code.
+
+```javascript
+if (new URLSearchParams(window.location.search).has("code")) {
+  await window.auth0Client.handleRedirectCallback();
+  window.history.replaceState({}, document.title, "/");
+}
+```
+
+Replace the second comment in `router.js` with the following code.
+
+```javascript
+if (await window.auth0Client.isAuthenticated())
+  window.user = await window.auth0Client.getUser();
+```
+
+Replace the first comment in `Navbar.js` with the following.
+
+```javascript
+const isAuthenticated = await window.auth0Client.isAuthenticated();
+```
+
+Replace the second comment in the `Navbar.js` with the following.
+
+```javascript
+await window.auth0Client.loginWithRedirect();
+```
+
+Replace the third comment in the `Navbar.js` with the following.
+
+```javascript
+window.auth0Client.logout({
+  returnTo: window.env.APP_URL,
+});
+```
+
+Replace the comment in `Expenses.js` with the following.
+
+```javascript
+allowAccess: async () => window.auth0Client.isAuthenticated(),
+```
