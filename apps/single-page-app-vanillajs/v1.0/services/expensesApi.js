@@ -10,7 +10,6 @@ const expensesApi = {
 
       const res = await fetch(`${window.env.API_URL}/total`, options);
       const json = await res.json();
-      console.log(json);
       return json;
     } catch (err) {
       console.log("Error getting total", err);

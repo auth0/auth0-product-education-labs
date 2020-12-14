@@ -56,22 +56,3 @@ window.auth0Client = await createAuth0Client({
 ```
 
 Replace next comment in `app.js` with the following code.
-
-```javascript
-if (requestedView === "#callback") {
-  await window.auth0Client.handleRedirectCallback();
-  window.history.replaceState({}, document.title, "/");
-}
-```
-
-Replace the allowAccess function wiht the following code.
-
-```javascript
-async function allowAccess() {
-  if (!(await window.auth0Client.isAuthenticated())) {
-    await loadView("#home", content);
-    return false;
-  }
-  return true;
-}
-```
