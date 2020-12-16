@@ -98,3 +98,29 @@ Replace the comment in `Expenses.js` with the following.
 ```javascript
 allowAccess: async () => window.auth0Client.isAuthenticated(),
 ```
+
+Add the following line to the client creation in `app.js`.
+
+```javascript
+window.auth0Client = await createAuth0Client({
+  domain,
+  client_id,
+  redirect_uri,
+  cacheLocation: "localstorage", // 👈 Added
+});
+```
+
+## Version 2.0
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fauth0%2Fauth0-product-education-labs%2Ftree%2Fmaster%2Fapps%2Fsingle-page-app-vanillajs%2Fv2.0&env=AUTH0_DOMAIN,CLIENT_ID,API_URL,VERCEL_URL,VERCEL_GITHUB_REPO,VERCEL_GITHUB_ORG&project-name=single-page-app&repository-name=single-page-app)
+
+### Run Local:
+
+```bash
+AUTH0_DOMAIN=your-tenant.region.auth0.com \
+CLIENT_ID=your-app-client-id  \
+API_URL=http://url-to-expenses-api
+npm run spa:v2:start
+```
+
+### Changes
