@@ -17,18 +17,18 @@ const expensesApi = {
   },
   getReports: async () => {
     try {
-      return [
-        {
-          date: new Date(),
-          description: "Pizza for a Coding Dojo session.",
-          value: 102,
+      const token = await window.auth0Client.getTokenSilently();
+      const options = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-        {
-          date: new Date(),
-          description: "Coffee for a Coding Dojo session.",
-          value: 42,
-        },
-      ];
+      };
+
+      const res = await fetch(`${window.env.API_URL}/reports`, options);
+      const json = await res.json();
+      return json;
     } catch (err) {
       console.log("Error getting reports", err);
     }
