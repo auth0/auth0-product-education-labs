@@ -37,8 +37,6 @@ npm run web-app:start
 
 ### Changes
 
-#### Step 1
-
 Add the following require statement to the top of the index.js file to get the `auth` middlware from the express openid connect node module.
 
 ```javascript
@@ -59,8 +57,6 @@ app.use(
 
 Save the file and load the application in browser.
 Note that you are sent to Auth0 immediately with out seeing the index page.
-
-#### Step 2
 
 Update the `auth` middleware configuration to add `authRequired: false`.
 
@@ -116,8 +112,6 @@ npm run web-app:v2:start
 ```
 
 ### Changes
-
-#### Step 1
 
 Add the API_URL environment variable to the Vercel project manually if needed.
 
@@ -201,8 +195,6 @@ npm run web-app:v3:start
 
 ### Changes
 
-#### Step 1
-
 Add the CLIENT_SECRET environment variable to the Vercel project manually if needed.
 
 Update the auth middleware configuration object to include the code response type and the expenses api audience.
@@ -265,8 +257,6 @@ npm run web-app:v4:start
 ```
 
 ### Changes
-
-#### Step 1
 
 Update the auth middleware configuration object to include the code response type and the expenses api audience.
 

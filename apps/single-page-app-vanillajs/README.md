@@ -35,8 +35,6 @@ npm run spa:start
 
 ### Changes
 
-#### Step 1
-
 Replace the comment in `index.html` with the follwing script reference.
 
 ```html
