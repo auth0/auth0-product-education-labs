@@ -17,6 +17,7 @@ const expensesApi = {
   },
   getReports: async () => {
     try {
+      // 👇 Replace this with call to API 👇
       return [
         {
           date: new Date(),
@@ -29,6 +30,7 @@ const expensesApi = {
           value: 42,
         },
       ];
+      // 👆 Replace this with call to API 👆
     } catch (err) {
       console.log("Error getting reports", err);
     }

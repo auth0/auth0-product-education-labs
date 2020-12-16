@@ -122,3 +122,33 @@ npm run spa:v2:start
 ```
 
 ### Changes
+
+Add the following api options to `app.js` after the environment variables.
+
+```javascript
+window.auth0Client = await createAuth0Client({
+  domain,
+  client_id,
+  redirect_uri,
+  cacheLocation: "localstorage",
+  audience: "https://expenses-api", // 👈 Added
+  scope: "read:reports", // 👈 Added
+});
+```
+
+Update the getReports function in `services/expensesApi.js` with the following.
+
+```javascript
+const token = await window.auth0Client.getTokenSilently();
+const options = {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
+  },
+};
+
+const res = await fetch(`${window.env.API_URL}/reports`, options);
+const json = await res.json();
+return json;
+```
