@@ -54,4 +54,10 @@ Slack: Use @concierge in the channel to ensure your message reaches the on-call 
 
 ---
 
+**Q**: I see a **502: BAD_GATEWAY** error with the code **NO_RESPONSE_FROM_FUNCTION** after I deploy my application to Vercel. How can I fix this?
+
+**A**: Watch [this video](https://auth0-1.wistia.com/medias/t48iertwqs) on troubleshooting this error.
+
+---
+
 More questions and answers will be added as they come in. 
