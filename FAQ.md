@@ -27,7 +27,7 @@ Include a detailed description of the issue:
 
 **Q**: What should I do if I am having an issue with the lab sample applications or environments?
 
-**A**: Please report any deployment issues, error messages, or blocking situations that prevent a lab from being completed to our team.
+**A**: In an effort to ensure you have a positive experience we’re planning to be on-call during business hours and have a plan in place to support you no matter your timezone. You can contact us in one of two ways. First (and best), via our slack channel: [#ext-auth-tech-training-beta](https://auth0.slack.com/archives/C01GT5P5HRB). Second, via our email address (training@auth0.com). You’ll need one of these channels to reach us if you need help, experience a bug, or find a spelling/grammar error.
 
 Include a detailed description of the issue:
 
@@ -40,5 +40,18 @@ Include a detailed description of the issue:
 
 ---
 
+**Q:** What is the SLA for receiving help from a team member?
+
+**A:** A staff member will be available for support, help, and answer questions during the regular workdays, Monday - Friday 6:00 AM - 8:00 PM PST.
+
+Email: Incoming requests to the training inbox will have the following SLA:
+- Response in 4 hours during regular workdays.
+- Off-hours requests will be responded to within 2 hours of the start of the following regular workday.
+
+Slack: Use @concierge in the channel to ensure your message reaches the on-call staff member.
+- Response in 2 hours during regular workdays.
+- Off-hours requests will be responded to within 2 hours of the start of the following regular workday.
+
+---
 
 More questions and answers will be added as they come in. 
