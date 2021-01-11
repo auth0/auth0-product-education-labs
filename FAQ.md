@@ -1,4 +1,4 @@
-# Frequently Asked Questions
+# Contact & Frequently Asked Questions
 
 
 **Q**: Do I have to complete the training in one session?
