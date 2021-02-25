@@ -14,7 +14,7 @@
 
   // update value based on vercel hosting
   if (VERCEL_URL) {
-    APP_URL = `https://${VERCEL_GITHUB_REPO}.${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
+    APP_URL = `https://${VERCEL_GITHUB_REPO}-git-master-${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
     // ensure expected hosted url
     if (!APP_URL.includes(window.location.host)) window.location = APP_URL;
   }
