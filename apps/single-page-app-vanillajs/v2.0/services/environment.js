@@ -11,10 +11,11 @@
   const VERCEL_URL = process.env.VERCEL_URL;
   const VERCEL_GITHUB_ORG = process.env.VERCEL_GITHUB_ORG;
   const VERCEL_GITHUB_REPO = process.env.VERCEL_GITHUB_REPO;
+  const VERCEL_GIT_COMMIT_REF = process.env.VERCEL_GIT_COMMIT_REF;
 
   // update value based on vercel hosting
   if (VERCEL_URL) {
-    APP_URL = `https://${VERCEL_GITHUB_REPO}-git-master-${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
+    APP_URL = `https://${VERCEL_GITHUB_REPO}-git-${VERCEL_GIT_COMMIT_REF}-${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`;
     // ensure expected hosted url
     if (!APP_URL.includes(window.location.host)) window.location = APP_URL;
   }
