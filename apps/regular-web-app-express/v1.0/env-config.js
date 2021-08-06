@@ -5,13 +5,14 @@ const {
   CLIENT_SECRET,
   SESSION_SECRET = "e6de1374433dde92a5bae567b56b01de32ad0d4f0115b7675f5b985720210f4c",
   VERCEL_URL,
+  VERCEL_GIT_COMMIT_REF,
   VERCEL_GITHUB_REPO,
   VERCEL_GITHUB_ORG,
   PORT = 7000,
 } = process.env;
 
 const appUrl = VERCEL_URL
-  ? `https://${VERCEL_GITHUB_REPO}-git-master-${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`
+  ? `https://${VERCEL_GITHUB_REPO}-git-${VERCEL_GIT_COMMIT_REF}-${VERCEL_GITHUB_ORG.toLowerCase()}.vercel.app`
   : `http://localhost:${PORT}`;
 
 function checkUrl() {
