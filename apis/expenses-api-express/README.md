@@ -44,10 +44,10 @@ npm run expenses-api:start
 
 #### Step 1
 
-Add the following require statement to the top of the index.js file to get the `auth` middlware from the express-oauth2-bearer node module.
+Add the following require statement to the top of the index.js file to get the `auth` middlware from the express-oauth2-jwt-bearer node module.
 
 ```javascript
-const { auth } = require("express-oauth2-bearer");
+const { auth } = require("express-oauth2-jwt-bearer");
 ```
 
 Add the following middleware use statement to the location specificed in the index.js file.
