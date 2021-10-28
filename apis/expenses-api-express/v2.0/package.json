@@ -14,7 +14,7 @@
     "url": "git+https://github.com/auth0/auth0-product-education-labs.git"
   },
   "scripts": {
-    "start": "PORT=$npm_package_config_expense_api_port ALLOWED_AUDIENCES=$npm_package_config_expense_api_audience node api/index"
+    "start": "PORT=$npm_package_config_expense_api_port AUDIENCE=$npm_package_config_expense_api_audience node api/index"
   },
   "config": {
     "expense_api_port": 5000,

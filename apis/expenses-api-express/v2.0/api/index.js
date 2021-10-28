@@ -6,7 +6,7 @@ const {
   checkUrl,
   APP_URL, // Public URL for this app
   ISSUER_BASE_URL, // Auth0 Tenant Url
-  ALLOWED_AUDIENCES, // Auth0 API Audience List
+  AUDIENCE, // Auth0 API Audience List
   PORT,
 } = require("./env-config");
 
