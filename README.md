@@ -1,5 +1,11 @@
 ![Auth0 Open Source Software](https://cdn.auth0.com/resources/oss-source-large-2x.png)
 
+
+# NOTICE 04/04/2022
+
+[Auth0 Production Education](https://github.com/auth0-training) has moved to it's own organization. These lab materials are no longer maintained and will be archived shortly. Please locate the new docker based labs in the [Auth0 Training](https://github.com/auth0-training) organization.
+
+
 # Auth0 Product Education Labs
 
 A set of tools and example applications for Product Education courses.
